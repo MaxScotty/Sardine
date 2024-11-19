@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SlimeHurt",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SlimeHurt",
+  "parent":{
+    "name":"Slime",
+    "path":"folders/Enemy/Slime.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

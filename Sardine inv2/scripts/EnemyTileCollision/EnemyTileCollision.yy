@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"EnemyTileCollision",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"EnemyTileCollision",
+  "parent":{
+    "name":"Enemy",
+    "path":"folders/Enemy.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,14 @@
+If anyone wants the enemy to give up after player gets outside of a distance, add to the bottom of SlimeChase
+
+if (_distanceToGo >= enemyGiveUpRange) state = ENEMYSTATE.WANDER;
+
+enemyGiveUpRange is a variable definition in pEnemy and I defaulted it to 60
+
+
+
+if you want to make the enemy stop when it gets too close, here is the code:
+if(point_distance(x,y,oPlayer.x,oPlayer.y) <= enemyAggroRadius / 2){
+		x = xprevious;
+		y = yprevious;
+}
+add this code to the bottom of the enemy collision check script, just above the return _collision;

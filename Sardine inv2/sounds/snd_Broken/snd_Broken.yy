@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_Broken",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":192,
+  "compression":3,
+  "conversionMode":0,
+  "duration":170.42284,
+  "name":"snd_Broken",
+  "parent":{
+    "name":"AutoMusicSystemTest",
+    "path":"folders/Music System/AutoMusicSystemTest.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Broken.ogg",
+  "type":1,
+  "volume":1.0,
+}

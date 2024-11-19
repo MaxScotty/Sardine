@@ -1,0 +1,1 @@
+HurtPlayer(point_direction(x, y, oSardine.x, oSardine.y), enemyForceTouch, enemyDamageTouch)

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sng_Hypnotic",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":192,
+  "compression":3,
+  "conversionMode":0,
+  "duration":205.24408,
+  "name":"sng_Hypnotic",
+  "parent":{
+    "name":"AutoMusicSystemTest",
+    "path":"folders/Music System/AutoMusicSystemTest.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sng_Hypnotic.ogg",
+  "type":1,
+  "volume":0.19,
+}
