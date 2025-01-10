@@ -115,6 +115,11 @@ switch(_text_id) {
 				GameScript("Quest Completed - yes yes");	
 				//oGame.textbox_text_id = "Quest Completed - finish";
 			}
+			
+			if oGame.QuestStatus[? "The flower quest"] == 3
+			{
+				GameScript("Quest Completed - finish");
+			}
 		}
 		
 		break;
@@ -124,13 +129,14 @@ switch(_text_id) {
 		TextScript("And you are getting...", "OtherCharacter");
 		TextScript("One more 'Thanks'!", "OtherCharacter");
 		TextScript("Because the happiness of the person you helped, is the best reward", "OtherCharacter");
+		oGame.QuestStatus[? "The flower quest"] = 3;
 		break;
 	
 	case "Quest Completed - no":
 		TextScript("Then why are you bothering me???", "OtherCharacter");
 		break;
 	
-	case "Guest Completed - finish":
+	case "Quest Completed - finish":
 		TextScript("So long, traveler", "OtherCharacter");
 		break;
 	

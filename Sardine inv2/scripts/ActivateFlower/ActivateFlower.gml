@@ -36,5 +36,10 @@ function ActivateFlower(){
 		{
 			text_id = "Quest Completed";
 		} break;
+		
+		case 3: //quest for sure completed
+		{
+			text_id = "Quest Completed - finish";
+		} break;
 	}
 }
