@@ -1,4 +1,3 @@
-/// @param text_id
 function GameScript(_text_id){
 
 switch(_text_id) {
@@ -113,7 +112,7 @@ switch(_text_id) {
 		{
 			if oGame.QuestStatus[? "The flower quest"] == 2
 			{
-				GameScript("Guest Completed - finish");	
+				GameScript("Quest Completed - yes yes");	
 				//oGame.textbox_text_id = "Quest Completed - finish";
 			}
 		}
