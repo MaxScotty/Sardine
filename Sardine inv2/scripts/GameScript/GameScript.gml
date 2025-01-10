@@ -113,7 +113,8 @@ switch(_text_id) {
 		{
 			if oGame.QuestStatus[? "The flower quest"] == 2
 			{
-				GameScript("Quest Completed - yes yes");	
+				GameScript("Guest Completed - finish");	
+				//oGame.textbox_text_id = "Quest Completed - finish";
 			}
 		}
 		
@@ -130,6 +131,9 @@ switch(_text_id) {
 		TextScript("Then why are you bothering me???", "OtherCharacter");
 		break;
 	
+	case "Guest Completed - finish":
+		TextScript("So long, traveler", "OtherCharacter");
+		break;
 	
 	/*case "meme":
 	TextScript("Бесят!", "Annoyed Meme");

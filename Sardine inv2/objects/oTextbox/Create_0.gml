@@ -10,6 +10,8 @@ txtb_spr[0] = sTextbox;
 txtb_img = 0;
 txtb_img_spd = 0;
 
+
+
 //the text
 page = 0;
 page_number = 0;
