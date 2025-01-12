@@ -50,6 +50,17 @@ global.item_list =
 		function()
 		{
 			//do nothing
+			//if we can give the item
+			if global.canUseItem
+			{
+				with (oItemManager)
+				{
+					instance_destroy(oTextbox);
+					can_swap = true;
+					showInv = false;
+					//delete_item(item_get_from_pos(posX, posY));	
+				}
+			}
 		}
 	),
 	
@@ -61,6 +72,17 @@ global.item_list =
 		
 		function()
 		{
+			//if we can give the item
+			if global.canUseItem
+			{
+				with (oItemManager)
+				{
+					instance_destroy(oTextbox);
+					can_swap = true;
+					showInv = false;
+					//delete_item(item_get_from_pos(posX, posY));	
+				}
+			}
 			// ЧТОБЫ УДАЛИТЬ ПРЕДМЕТ:
 			/*
 			

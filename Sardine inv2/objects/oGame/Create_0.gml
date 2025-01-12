@@ -9,3 +9,5 @@ textbox_text_id = "";
 
 global.can_use_flower = false;
 global.set_quest_flower_to_2 = false;
+
+global.canUseItem = false;

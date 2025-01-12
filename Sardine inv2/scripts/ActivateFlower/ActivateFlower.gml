@@ -2,8 +2,12 @@ function ActivateFlower(){
 	var _hasFlower = false;
 	
 	var _item = item_get_slot_number(global.item_list.flower);
+	//var _difItem = item_get_slot_number(global.item_list.coin);
+	//var _diffItem = item_get_slot_number(global.item_list.cuclet);
 	
 	if _item != -1 { _hasFlower = true; }
+	//if _difItem != -1 {_hasFlower = false;}
+	//if _diffItem != -1 {_hasFlower = false;}
 	
 	switch (oGame.QuestStatus[? "The flower quest"])
 	{

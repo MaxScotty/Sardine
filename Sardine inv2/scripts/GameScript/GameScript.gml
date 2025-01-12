@@ -97,30 +97,52 @@ switch(_text_id) {
 		var _item = item_get_slot_number(global.item_list.flower);
 		
 		if _item != -1
-		{
-			global.can_use_flower = true;
-			
-			oItemManager.can_swap = false;
-			oItemManager.showInv = true;
-		
-			oGame.create_textbox = true;
-			oGame.textbox_text_id = "Quest Completed - yes yes";
-			
-			TextScript("");
-			instance_destroy(oTextbox);
-		} else
-		{
-			if oGame.QuestStatus[? "The flower quest"] == 2
-			{
-				GameScript("Quest Completed - yes yes");	
-				//oGame.textbox_text_id = "Quest Completed - finish";
-			}
-			
-			if oGame.QuestStatus[? "The flower quest"] == 3
-			{
-				GameScript("Quest Completed - finish");
-			}
-		}
+        {
+            //var _slot_selected = item_get_list_name(global.item_list.flower.Name);
+            
+            //if _slot_selected == item_get_from_pos(oItemManager.posX, oItemManager.posY)
+           // {
+                global.can_use_flower = true;
+                global.canUseItem = false;
+                
+                oItemManager.can_swap = false;
+                oItemManager.showInv = true;
+            
+                oGame.create_textbox = true;
+                oGame.textbox_text_id = "Quest Completed - yes yes";
+                
+                TextScript("");
+                instance_destroy(oTextbox);
+           } else
+           {
+				global.canUseItem = true
+				
+                if global.canUseItem
+				{
+            
+                oItemManager.can_swap = false;
+                oItemManager.showInv = true;
+            
+                oGame.create_textbox = true;
+                oGame.textbox_text_id = "Wrong";
+                
+                TextScript("");
+                instance_destroy(oTextbox); 
+				}
+            }
+        //} else
+        //{
+            if oGame.QuestStatus[? "The flower quest"] == 2
+            {
+                GameScript("Quest Completed - yes yes");    
+                //oGame.textbox_text_id = "Quest Completed - finish";
+            }
+            
+            if oGame.QuestStatus[? "The flower quest"] == 3
+            {
+                GameScript("Quest Completed - finish");
+            } 
+        //}
 		
 		break;
 	
@@ -138,6 +160,10 @@ switch(_text_id) {
 	
 	case "Quest Completed - finish":
 		TextScript("So long, traveler", "OtherCharacter");
+		break;
+		
+	case "Wrong":
+		TextScript("Noooo! I don't need that", "OtherCharacter");
 		break;
 	
 	/*case "meme":
