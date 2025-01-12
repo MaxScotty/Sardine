@@ -51,6 +51,7 @@ global.item_list =
 		{
 			//do nothing
 			//if we can give the item
+			
 			if global.canUseItem
 			{
 				with (oItemManager)
@@ -72,6 +73,8 @@ global.item_list =
 		
 		function()
 		{
+
+			
 			//if we can give the item
 			if global.canUseItem
 			{
@@ -83,6 +86,8 @@ global.item_list =
 					//delete_item(item_get_from_pos(posX, posY));	
 				}
 			}
+			
+		
 			// ЧТОБЫ УДАЛИТЬ ПРЕДМЕТ:
 			/*
 			
@@ -129,6 +134,7 @@ global.item_list =
 		sFlower,
 		function()
 		{
+
 			if global.can_use_flower
 			{
 				with (oItemManager)
