@@ -98,36 +98,6 @@ switch(_text_id) {
 		
 		if _item != -1
         {
-            var _slot_selected = item_get_list_name(item_get_from_pos(posX, posY))
-		
-			if _slot_selected ==  "Flower"
-            {
-                global.can_use_flower = true;
-                //global.canUseItem = true;
-                
-                oItemManager.can_swap = false;
-                oItemManager.showInv = true;
-            
-                oGame.create_textbox = true;
-                oGame.textbox_text_id = "Quest Completed - yes yes";
-                
-                TextScript("");
-                instance_destroy(oTextbox);
-            } else
-            {
-                global.canUseItem = true;
-            
-                oItemManager.can_swap = false;
-                oItemManager.showInv = true;
-            
-                oGame.create_textbox = true;
-                oGame.textbox_text_id = "Wrong";
-                
-                TextScript("");
-                instance_destroy(oTextbox); 
-            }
-        } else
-        {
             if oGame.QuestStatus[? "The flower quest"] == 2
             {
                 GameScript("Quest Completed - yes yes");    
@@ -138,7 +108,14 @@ switch(_text_id) {
             {
                 GameScript("Quest Completed - finish");
             } 
-        }
+        } else {
+			oItemManager.can_swap = false;
+			oItemManager.showInv = true;
+			global.canUseItem = false;
+			
+			TextScript("");
+			instance_destroy(oTextbox);
+		}
 		
 		break;
 	

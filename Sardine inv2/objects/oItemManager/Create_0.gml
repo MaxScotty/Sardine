@@ -134,15 +134,33 @@ global.item_list =
 		sFlower,
 		function()
 		{
-
-			if global.can_use_flower
+			if instance_exists(oBlackCatNPCTest)
 			{
-				with (oItemManager)
+				if point_distance(oSardine.x, oSardine.y, oBlackCatNPCTest.x, oBlackCatNPCTest. y) <= 32
 				{
-					instance_destroy(oTextbox);
-					can_swap = true;
-					showInv = false;
-					delete_item(item_get_from_pos(posX, posY));	
+					with (oItemManager)
+					{
+						var _item = item_get_slot_number(global.item_list.flower);
+						
+						if _item != -1
+						{
+							var _slotSelected = item_get_list_name(item_get_from_pos(posX, posY))
+							
+							if _slotSelected == "flower"
+							{
+								global.canUseItem = true;
+								
+								oGame.create_textbox = true;
+								oGame.textbox_text_id = "Quest Completed - yes yes";
+								
+								can_swap = true;
+								showInv = false;
+								delete_item(item_get_from_pos(posX, posX));
+							}
+						}
+						
+						global.canUseItem = true;
+					}
 				}
 			}
 		}
