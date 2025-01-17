@@ -28,17 +28,19 @@ if showInv == true
 		
 		if _item != -1 && inv[_item] != noone
 		{
-			if instance_exists(oBlackCatNPCTest)
+			if room == rCave
 			{
-				if point_distance(oSardine.x, oSardine.y, oBlackCatNPCTest.x, oBlackCatNPCTest.y) <= 32
+				if instance_exists(oBlackCatNPCTest)
 				{
-					if item_get_list_name(_item) != "flower"
+					if point_distance(oSardine.x, oSardine.y, oBlackCatNPCTest.x, oBlackCatNPCTest.y) <= 32
 					{
-						showInv = false;
-						can_swap = true;
-						oGame.create_textbox = true;
-						oGame.textbox_text_id = "Wrong";
-						
+						if (item_get_list_name(selected_item) != "flower")
+						{
+							showInv = false;
+							can_swap = true;
+							oGame.create_textbox = true;
+							oGame.textbox_text_id = "Wrong";
+						}
 					}
 				}
 			}

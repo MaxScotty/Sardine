@@ -98,7 +98,15 @@ switch(_text_id) {
 		
 		if _item != -1
         {
-            if oGame.QuestStatus[? "The flower quest"] == 2
+			oItemManager.can_swap = false;
+			oItemManager.showInv = true;
+			global.canUseItem = false
+			
+			TextScript("");
+			instance_destroy(oTextbox);
+			
+        } else {
+			if oGame.QuestStatus[? "The flower quest"] == 2
             {
                 GameScript("Quest Completed - yes yes");    
                 //oGame.textbox_text_id = "Quest Completed - finish";
@@ -108,13 +116,6 @@ switch(_text_id) {
             {
                 GameScript("Quest Completed - finish");
             } 
-        } else {
-			oItemManager.can_swap = false;
-			oItemManager.showInv = true;
-			global.canUseItem = false;
-			
-			TextScript("");
-			instance_destroy(oTextbox);
 		}
 		
 		break;

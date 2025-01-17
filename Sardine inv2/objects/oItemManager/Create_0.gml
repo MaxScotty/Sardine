@@ -140,14 +140,10 @@ global.item_list =
 				{
 					with (oItemManager)
 					{
-						var _item = item_get_slot_number(global.item_list.flower);
-						
-						if _item != -1
+						if room == rCave
 						{
-							var _slotSelected = item_get_list_name(item_get_from_pos(posX, posY))
-							
-							if _slotSelected == "flower"
-							{
+							//if point_distance(oSardine.x, oSardine.y, oBlackCatNPCTest.x, oBlackCatNPCTest. y) <= 32
+							//{
 								global.canUseItem = true;
 								
 								oGame.create_textbox = true;
@@ -155,11 +151,12 @@ global.item_list =
 								
 								can_swap = true;
 								showInv = false;
-								delete_item(item_get_from_pos(posX, posX));
-							}
+								delete_item(global.item_list.flower)
+								//delete_item(item_get_from_pos(posX, posX));
+							//}
+					
+							//global.canUseItem = true;
 						}
-						
-						global.canUseItem = true;
 					}
 				}
 			}
