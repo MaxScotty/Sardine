@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"oCoin",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oCoin",
   "overriddenProperties":[],
@@ -9,7 +11,10 @@
     "name":"Inventory",
     "path":"folders/Objects/Inventory.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oCollectible",
+    "path":"objects/oCollectible/oCollectible.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

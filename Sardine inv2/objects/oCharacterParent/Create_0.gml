@@ -7,6 +7,8 @@ moving = false;
 targetX = x;
 targetY = y;
 
+entityDropList = -1;
+
 get_sprite = function(dir) 
 {
 //dir = moveDirection;
@@ -43,3 +45,7 @@ move_to_points = function(_targetX, _targetY)
 //shader
 flash = 0;
 uFlash =  shader_get_uniform(shWhiteFlash, "flash");
+
+fric = 0;
+spd = 0;
+

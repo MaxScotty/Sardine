@@ -12,3 +12,5 @@ NPCstates = {
 }
 
 NPCstate = NPCstates.idle;
+
+entityDropList = [oCoin, oCoin, oCoin];
