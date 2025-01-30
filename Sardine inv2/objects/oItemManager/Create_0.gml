@@ -73,8 +73,12 @@ global.item_list =
 		
 		function()
 		{
-
-			
+			//health restore
+			if (global.playerHealth < global.playerHealthMax)
+			{
+				global.playerHealth += 5;
+				delete_item(item_get_from_pos(posX, posY));
+			}
 			//if we can give the item
 			if global.canUseItem
 			{

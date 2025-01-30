@@ -6,6 +6,7 @@ keyRoll = input_check_pressed("shift");
 keyAttack = input_check_pressed("action");
 
 
+
 if set_0_frame
 {
 	if(sprite_index != sSardineDie) && (sprite_index != sSardineDeath)

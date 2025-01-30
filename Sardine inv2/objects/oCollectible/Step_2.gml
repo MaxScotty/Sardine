@@ -1,5 +1,3 @@
-event_inherited();
-
 flash = max(0, flash - 0.05);
 fric = 0.05;
 
@@ -25,6 +23,7 @@ if(instance_exists(oSardine))
 			{
 				if (collectScript != -1) script_execute(collectScript);
 			}
+			item_add(global.item_list.coin, 1);
 			instance_destroy();
 		}
 	}

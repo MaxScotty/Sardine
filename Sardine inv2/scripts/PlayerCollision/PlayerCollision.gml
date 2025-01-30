@@ -33,6 +33,9 @@ function PlayerCollision(){
 			
 			xspd = 0; 
 			
+			var c = instance_position(round(x), round(y), oCharacterParent);
+			if (c == oCollectible) x += sign(xspd);
+			
 		}
 		if place_meeting(x, y + yspd, oCharacterParent) 
 		{
@@ -42,8 +45,15 @@ function PlayerCollision(){
 			}
 			
 			yspd = 0;
+			
+			var c = instance_position(round(x), round(y), oCharacterParent);
+			if (c == oCollectible) y += sign(yspd);
+		
 			_obj = oCharacterParent;
 		}
+		
+		//var c = instance_position(round(x), round(y), oCharacterParent);
+		//if (c == oCoin) exit;
 	}
 	return _obj;
 }

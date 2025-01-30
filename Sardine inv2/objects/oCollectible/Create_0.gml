@@ -1,3 +1,5 @@
-event_inherited();
+flash = 0;
+uFlash =  shader_get_uniform(shWhiteFlash, "flash");
 
-flash = 1;
+fric = 0;
+spd = 0;
