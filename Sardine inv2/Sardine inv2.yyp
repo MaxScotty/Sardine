@@ -592,6 +592,7 @@
     {"id":{"name":"sFragStone","path":"sprites/sFragStone/sFragStone.yy",},},
     {"id":{"name":"sGrumpyEmotion","path":"sprites/sGrumpyEmotion/sGrumpyEmotion.yy",},},
     {"id":{"name":"sHealing","path":"sprites/sHealing/sHealing.yy",},},
+    {"id":{"name":"shopPH","path":"sprites/shopPH/shopPH.yy",},},
     {"id":{"name":"sHP_battle","path":"sprites/sHP_battle/sHP_battle.yy",},},
     {"id":{"name":"sHP","path":"sprites/sHP/sHP.yy",},},
     {"id":{"name":"sHPSlime","path":"sprites/sHPSlime/sHPSlime.yy",},},
