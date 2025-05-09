@@ -30,7 +30,7 @@ speedRoll = 3;
 
 cantWalk = true;
 time = 120;
-timer = time;
+timer = 0;
 recDir = 0;
 recXspd = 0;
 recYspd = 0;

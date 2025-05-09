@@ -8,7 +8,7 @@ function HurtPlayer(_direction, _force, _damage)
 		{
 			with(oSardine)
 			{
-				cantWalk = false;
+				//cantWalk = false;
 				
 				death_bonk_length = _force;
 				
