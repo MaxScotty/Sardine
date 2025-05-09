@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"Sardine inv2",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -91,6 +91,7 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"СаньДляТебя","folderPath":"folders/СаньДляТебя.yy","name":"СаньДляТебя","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"controllerblacklist.csv","CopyToMask":-1,"filePath":"datafiles","name":"controllerblacklist.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"controllertypes.csv","CopyToMask":-1,"filePath":"datafiles","name":"controllertypes.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -101,11 +102,11 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.11.0.179",
-    "PackageType":"Asset",
-    "PackageName":"game",
+    "IDEVersion":"2024.13.0.190",
     "PackageID":"game",
+    "PackageName":"game",
     "PackagePublisher":"game",
+    "PackageType":"Asset",
     "PackageVersion":"1.0.0",
   },
   "name":"Sardine inv2",

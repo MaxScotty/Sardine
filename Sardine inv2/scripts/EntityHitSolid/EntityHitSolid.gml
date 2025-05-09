@@ -1,1 +1,4 @@
-flash = 0.5;
+function EntityHitSolid()
+{
+	flash = 0.5;
+}
