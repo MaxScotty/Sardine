@@ -28,7 +28,7 @@ distanceRoll = 50;
 move_distance_remaining = 0;	
 speedRoll = 3;
 
-cantWalk = true;
+cantWalk = false;
 time = 120;
 timer = 0;
 recDir = 0;
