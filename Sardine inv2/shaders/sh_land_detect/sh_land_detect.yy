@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"sh_land_detect",
+  "name":"sh_land_detect",
+  "parent":{
+    "name":"WaterReflection",
+    "path":"folders/Shader/WaterReflection.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

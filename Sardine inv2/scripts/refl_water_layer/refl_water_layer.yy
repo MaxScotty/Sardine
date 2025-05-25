@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"refl_water_layer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"refl_water_layer",
+  "parent":{
+    "name":"WaterReflection",
+    "path":"folders/Scripts/WaterReflection.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

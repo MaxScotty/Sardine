@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"refl_start",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"refl_start",
+  "parent":{
+    "name":"WaterReflection",
+    "path":"folders/Scripts/WaterReflection.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

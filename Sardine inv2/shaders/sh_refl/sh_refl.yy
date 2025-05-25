@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"sh_refl",
+  "name":"sh_refl",
+  "parent":{
+    "name":"WaterReflection",
+    "path":"folders/Shader/WaterReflection.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}
