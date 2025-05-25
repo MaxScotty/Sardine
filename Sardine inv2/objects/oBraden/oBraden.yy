@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBraden",
-    "path":"sprites/sBraden/sBraden.yy",
+    "name":"sBradenSleeps",
+    "path":"sprites/sBradenSleeps/sBradenSleeps.yy",
   },
   "spriteMaskId":null,
   "visible":true,
