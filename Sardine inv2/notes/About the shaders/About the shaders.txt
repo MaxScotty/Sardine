@@ -1,0 +1,6 @@
+First, The water reflection shader is made by Martharoo. All you need to do is optimize it
+
+in the sprites there will be grass sprites and water sprites. 
+Make the drass animated only if it is nessesarry for the environment, otherwise do animated objects
+
+the water add with vertex buffer. It will optimize the game
