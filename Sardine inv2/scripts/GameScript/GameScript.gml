@@ -140,6 +140,10 @@ switch(_text_id) {
 		TextScript("Noooo! I don't need that", "OtherCharacter");
 		break;
 	
+	case "ObtainingCoins":
+		TextScript("You have obtained " + string(oChest.coin_number) + " coins");
+		//TextScript("You have obtained 5 coins");
+		break;
 	/*case "meme":
 	TextScript("Бесят!", "Annoyed Meme");
 	TextScript("Постоянно пунькают мне в носик", "Angry");

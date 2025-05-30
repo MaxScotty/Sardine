@@ -360,3 +360,6 @@ if global.set_quest_flower_to_2
 		global.set_quest_flower_to_2 = false;
 	}
 }
+
+
+
