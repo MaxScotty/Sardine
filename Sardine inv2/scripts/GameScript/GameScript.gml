@@ -144,6 +144,13 @@ switch(_text_id) {
 		TextScript("You have obtained " + string(oChest.coin_number) + " coins");
 		//TextScript("You have obtained 5 coins");
 		break;
+		
+	case "BradenShopStartDialog":
+		TextScript("Welcome traveler! I am Braden, welcome to my humble shop.");
+		TextScript("I'm Sardine...mind if I take a look around?", "Smile");
+		TextScript("Go ahead! I'm here to answer any questions if you need.");
+		break;
+		
 	/*case "meme":
 	TextScript("Бесят!", "Annoyed Meme");
 	TextScript("Постоянно пунькают мне в носик", "Angry");
