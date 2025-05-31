@@ -108,11 +108,11 @@ if showShop && alphaShop >= 1
 }	
 
 
-if keyboard_check(vk_shift)
-{
-	if keyboard_check_pressed(ord("L"))
-	{
-		room_set_live(room, true);
-		room_restart();
-	}
-}
+//if keyboard_check(vk_shift)
+//{
+//	if keyboard_check_pressed(ord("L"))
+//	{
+//		room_set_live(room, true);
+//		room_restart();
+//	}
+//}
