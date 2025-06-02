@@ -97,8 +97,10 @@ if showShop && alphaShop >= 1
 {
 	var _pos_sbm = posSubMenu;
 	
+	pos += input_check_pressed("down")-input_check_pressed("up");
 	
-	
+	if pos < 0 { pos = array_length(braden_items)-1; };
+	if pos >= array_length(braden_items) { pos = 0; };
 	
 	//если позиция суб меню изменена, то вертикальная позиция обнуляется
 	if posSubMenu != _pos_sbm

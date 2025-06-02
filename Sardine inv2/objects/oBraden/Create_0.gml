@@ -52,5 +52,9 @@ pos = 0;
 posSubMenu = 0;
 
 //предметы кладмена
-items_bramen = array_create(0);
+braden_items = [];
+
+
+repeat 5
+	array_push(braden_items, global.item_list.green_tea);
 

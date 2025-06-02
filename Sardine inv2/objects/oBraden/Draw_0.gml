@@ -27,31 +27,50 @@ _cur_h = room_height*0.8;
 //рисуем среднее меню
 draw_sprite_ext(sMenu, 0, room_width/2 - _cur_w/2, room_height/2 - _cur_h/2, _cur_w / _ww, _cur_h / _hh, 0, c_white, alphaShop);
 
-//вещи мистера сэра бармена бромена бре- бру- 0010100101 бурбамела. <\\Брамена//>
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-//for (var i = 0; i < array_length(oItemManager.inv); i++)
-//{
-//	var _c = c_white;
-	
-//	if pos == i { _c = c_yellow; };
-	
-//	draw_text_color(room_width/2-_cur_h, room_height/4+32*i, oItemManager.inv[i].Name, _c, _c, _c, _c, alphaShop);
-//}
 
 //нужный размер спрайта для левого меню
-_cur_w = room_width/6;
+_cur_w = room_width/4;
 _cur_h = room_height*0.6;
 
 //рисуем левое меню
-draw_sprite_ext(sMenu, 0, room_width/4 - _cur_w/2, room_height/2 - _cur_h/2, _cur_w / _ww, _cur_h / _hh, 0, c_white, alphaShop);
+draw_sprite_ext(sMenu, 0, room_width/4 - _cur_w/1.5, room_height/2 - _cur_h/2, _cur_w / _ww, _cur_h / _hh, 0, c_white, alphaShop);
 
 
 
 //нужный размер спрайта для правого меню такой же как и у левого
 
 //рисуем правое меню
-draw_sprite_ext(sMenu, 0, room_width - room_width/4 - _cur_w/2, room_height/2 - _cur_h/2, _cur_w / _ww, _cur_h / _hh, 0, c_white, alphaShop);
+draw_sprite_ext(sMenu, 0, room_width/2 + room_width/4 - _cur_w/3, room_height/2 - _cur_h/2, _cur_w / _ww, _cur_h / _hh, 0, c_white, alphaShop);
+
+
+
+//вещи мистера сэра бармена бромена бре- бру- 0010100101 бурбамела. <\\Брамена//>
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
+var _coin_got = 0;
+
+for (var i = 0; i < array_length(oItemManager.inv); i++)
+{
+	if item_get_list_name(oItemManager.inv[i]) == "coin"
+	{
+		_coin_got = oItemManager.inv[i].number;	
+		break;
+	}
+}
+
+for (var i = 0; i < array_length(braden_items); i++)
+{
+	var item = braden_items[i];
+	
+	var _c = c_white;
+	
+	if pos == i { _c = c_yellow; };
+	
+	draw_text_color(room_width/2 - room_width/5 + 48, room_height/2 - room_height*0.4+48+32*i, "-"+item.Name, _c, _c, _c,_c, 1);	
+	draw_text_ext_color(room_width/4 - room_width/5.5 + 32, room_height/2 - room_height*0.3 + 32, $"*{item.description}\n*{item.abilities}", 32, _cur_w-16, c_white, c_white, c_white, c_white, 1);	
+	draw_text_ext_color(room_width - room_width/4 - _cur_w/2+48, room_height/2 - _cur_h/2+32, $"Cost: {item.cost}\n\n\n\nYou got: {_coin_got}", 32, _cur_w-16, c_white, c_white, c_white,c_white, 1);	
+}
 
 
 

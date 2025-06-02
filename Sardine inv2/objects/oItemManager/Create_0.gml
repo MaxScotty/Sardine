@@ -25,19 +25,29 @@ posY = 0;
 	
 */
 
+enum EQUIP_STATUS
+{
+	ARMOR = 0,
+	WEAPON = 1,
+}
 
-
-function create_item(_name, _description, _battle, _sprite, _effect) constructor
+///////////		equip status и equip power используется только если это оружие или броня.
+///////////		equip status может быть равен EQUIP_STATUS.ARMOR или EQUIP_STATUS.WEAPON.
+///////////		equip power это атака или защита в зависимости от предыдущего аргумента.
+function create_item(_name, _description, _battle, _abilities, _cost, _sprite, _effect, _equip_status = -1, _equip_power = 0) constructor
 {
 	Name = _name;
 	description = _description;
 	number = 0;
 	inBattle = _battle;
+	abilities = _abilities;
+	cost = _cost;
 	sprite = _sprite;
 	effect = _effect;
+	
+	equip_status = _equip_status;
+	equip_power = _equip_power;
 }
-
-
 
 global.item_list =
 {
@@ -45,8 +55,9 @@ global.item_list =
 		"Coin",
 		"Pay",
 		false,
+		"Payment",
+		0,
 		sCoin,
-		
 		function()
 		{
 			//do nothing
@@ -69,8 +80,9 @@ global.item_list =
 		"Cuclet",
 		"It isn't a potato!!!!",
 		true,
+		"+5 hp",
+		0,
 		sCuclet,
-		
 		function()
 		{
 			//health restore
@@ -135,6 +147,8 @@ global.item_list =
 		"Flower",
 		"A beautiful flower",
 		false,
+		"",
+		0,
 		sFlower,
 		function()
 		{
@@ -165,7 +179,21 @@ global.item_list =
 				}
 			}
 		}
-	)
+	),
+	
+	green_tea : new create_item(
+		"Green Tea",
+		"Tasty tea. Sexy smell.",
+		"Sexy Shmexy.",
+		"+5000 hp",
+		2,
+		noone,
+		
+		function()
+		{
+			global.player_hp += 5000;
+		}
+	),
 }
 
 
