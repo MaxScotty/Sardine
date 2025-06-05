@@ -89,7 +89,7 @@ global.item_list =
 			if (global.playerHealth < global.playerHealthMax)
 			{
 				global.playerHealth += 5;
-				delete_item(item_get_from_pos(posX, posY));
+				delete_item(global.item_list.cuclet);
 			}
 			//if we can give the item
 			if global.canUseItem
@@ -187,11 +187,16 @@ global.item_list =
 		"Sexy Shmexy.",
 		"+5000 hp",
 		2,
-		noone,
+		spr_green_tea,
 		
 		function()
 		{
-			global.player_hp += 5000;
+			global.playerHealth += 5000;
+			
+			with (oItemManager)
+			{
+				delete_item(global.item_list.green_tea)
+			}
 		}
 	),
 }

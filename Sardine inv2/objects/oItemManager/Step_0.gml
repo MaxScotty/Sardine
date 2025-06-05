@@ -64,3 +64,19 @@ if input_check_pressed("special") && can_swap
 {
 	showInv = false;	
 }
+
+
+for (var i = 0; i < array_length(inv); i++)
+{
+	if inv[i] == noone
+	{
+		continue;	
+	} else
+	{
+		if inv[i].number <= 0
+		{
+			inv[i] = noone;	
+		}
+	}
+}
+

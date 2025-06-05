@@ -54,7 +54,24 @@ posSubMenu = 0;
 //предметы кладмена
 braden_items = [];
 
-
+//добавляем предметы
 repeat 5
 	array_push(braden_items, global.item_list.green_tea);
 
+//кнопка выхода
+array_push(braden_items, { Name : "Leave" });
+
+//параметры для выхода
+leave = false;
+alpha_leave = 0;
+
+//получаем индекс слота с монетами
+posCoins = item_get_slot_number(global.item_list.coin);
+
+subMenuExtY[0] = 0;
+subMenuExtY[1] = 0;
+
+subMenuText[0] = "Buy";
+subMenuText[1] = "Sell";
+
+player_items = [];

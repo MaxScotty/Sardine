@@ -5,6 +5,17 @@ sleep = (спрайт это спит + спрайт это встал). sleep =
 sleep = true + false (true); sleep = false + false (false); sleep = true + true (true);
 */
 
+player_items = [];
+for (var i = 0; i < array_length(oItemManager.inv); i++)
+{
+	if oItemManager.inv[i] != noone && oItemManager.inv[i].cost > 0
+	{
+		array_push(player_items, oItemManager.inv[i]);	
+	}
+}
+
+array_push(player_items, { Name : "Leave" });
+
 sleep = (sprite_index == sprite_sleep or sprite_index == sprite_awake);
 
 //После всего
@@ -93,7 +104,7 @@ if is_start_textbox_created && !instance_exists(oTextbox)
 y = lerp(y, yy, 0.1);
 
 
-if showShop && alphaShop >= 1
+if showShop && alphaShop >= 1 && !leave
 {
 	var _pos_sbm = posSubMenu;
 	
@@ -102,13 +113,69 @@ if showShop && alphaShop >= 1
 	if pos < 0 { pos = array_length(braden_items)-1; };
 	if pos >= array_length(braden_items) { pos = 0; };
 	
+	//прибавляем к суб меню нажатия и ограничиваем от 0 до 1
+	posSubMenu = clamp(posSubMenu + (keyboard_check_pressed(ord("R")) - keyboard_check_pressed(ord("Q"))), 0, 1);
+	
 	//если позиция суб меню изменена, то вертикальная позиция обнуляется
 	if posSubMenu != _pos_sbm
 	{
 		pos = 0;
 	}
+	
+	//если нажата кнопка использования
+	if input_check_pressed("action")
+	{
+		//если позиция не равна кнопке Leave (-1 потому что pos начинается с 0)
+		if pos != ((posSubMenu == 0) ? (array_length(braden_items)) : (array_length(player_items)))-1
+		{
+			//если суб меню = 0
+			if posSubMenu == 0
+			{
+				//получаем индекс слота с монетами
+				posCoins = item_get_slot_number(global.item_list.coin);
+				//если хватает монет
+				if posCoins != -1 && oItemManager.inv[posCoins].number >= braden_items[pos].cost
+				{
+					//платим
+					oItemManager.inv[posCoins].number -= braden_items[pos].cost;
+					
+					//show_debug_message($"{oItemManager.inv[posCoins].number} - {braden_items[pos].number}");
+					
+					//добавляем предмет
+					item_add(braden_items[pos], 1);	
+				}
+			} 
+			//либо если = 1
+			else
+			{
+				//var _slot = item_get_slot_number(player_items[pos]);
+				
+				//добавляем монеты
+				item_add(global.item_list.coin, player_items[pos].cost);
+				delete_item(player_items[pos]);
+				
+			}
+		}
+		//либо уходим
+		else
+		{
+			//уходим
+			leave = true;
+		}
+	}
 }	
 
+//если уходим
+if leave
+{
+	if alpha_leave < 1
+	{
+		alpha_leave += 0.05;	
+	} else
+	{
+		room_goto(rCave);
+	}
+}
 
 //if keyboard_check(vk_shift)
 //{

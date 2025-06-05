@@ -640,6 +640,7 @@
     {"id":{"name":"sMPver2","path":"sprites/sMPver2/sMPver2.yy",},},
     {"id":{"name":"sNervousEmotion","path":"sprites/sNervousEmotion/sNervousEmotion.yy",},},
     {"id":{"name":"sNeutralEmotion","path":"sprites/sNeutralEmotion/sNeutralEmotion.yy",},},
+    {"id":{"name":"spr_green_tea","path":"sprites/spr_green_tea/spr_green_tea.yy",},},
     {"id":{"name":"sRollingDown","path":"sprites/sRollingDown/sRollingDown.yy",},},
     {"id":{"name":"sRollingLeft","path":"sprites/sRollingLeft/sRollingLeft.yy",},},
     {"id":{"name":"sRollingRight","path":"sprites/sRollingRight/sRollingRight.yy",},},

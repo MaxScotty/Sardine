@@ -56,27 +56,20 @@ function item_add(_item, _number)
 	}
 }
 
-function item_get_slot_number(_item)
+function item_get_slot_number(_item, _default = -1)
 {
-	var _got = false;
-	
 	with (oItemManager)
 	{
-		for (var i = 0; i < 14; i++)
+		for (var i = 0; i < array_length(inv); i++)
 		{
 			if inv[i] == _item
 			{
-				_got = true;
 				return i;
-				break;
 			}
 		}
 	}
-	
-	if !_got
-	{
-		return -1;	
-	}
+
+	return _default;	
 }
 
 function item_get_from_pos(_posX, _posY)
@@ -101,7 +94,7 @@ function item_get_from_pos(_posX, _posY)
 
 function delete_item(_item)
 {
-	var _num = item_get_slot_number(_item);
+	var _num = item_get_slot_number(_item, -1);
 	
 	if _num == -1 { exit; };
 	
