@@ -19,6 +19,15 @@ sleepAnimationTimes = 3;
 //счётчик этой анимации
 sleepAnimationCount = 0;
 
+if !global.first_time_in_shop
+{
+	sleepAnimationCount = sleepAnimationTimes;
+	sprite_index = sprite_normal;
+} else
+{
+	global.first_time_in_shop = false;	
+}
+
 //непрозрачность фона
 alphaBg = 0.3;
 
@@ -29,18 +38,14 @@ timerWaitAfterAwake = 120;
 //таймер для ожидания после диалога
 timerWaitAfterDialog = 60;
 
-//переменная для передвижения
-yy = y;
-
 //показ меню магазина
 showShop = false;
 
-//получаем все id элементов слоя асетов
-layer_assets_IDs = layer_get_all_elements("Assets_1");
-
+//layer_destroy("Assets_1");
 
 //непрозрачность меню магазина
 alphaShop = 0;
+
 
 //имя магазина
 shop_name = "Braden Shop";

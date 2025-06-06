@@ -11,4 +11,13 @@ global.can_use_flower = false;
 global.set_quest_flower_to_2 = false;
 
 global.canUseItem = false;
+             
+
+global.first_time_in_shop = true;
+
+
+
+
+
+
 

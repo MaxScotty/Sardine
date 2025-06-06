@@ -146,9 +146,15 @@ switch(_text_id) {
 		break;
 		
 	case "BradenShopStartDialog":
-		TextScript("Welcome traveler! I am Braden, welcome to my humble shop.");
-		TextScript("I'm Sardine...mind if I take a look around?", "Smile");
-		TextScript("Go ahead! I'm here to answer any questions if you need.");
+		if global.first_time_in_shop
+		{
+			TextScript("Welcome traveler! I am Braden, welcome to my humble shop.");
+			TextScript("I'm Sardine...mind if I take a look around?", "Smile");
+			TextScript("Go ahead! I'm here to answer any questions if you need.");
+		} else
+		{
+			TextScript("Welcome back! Anything you'd like to see in particular?");	
+		}
 		break;
 		
 	/*case "meme":

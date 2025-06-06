@@ -81,8 +81,9 @@ global.item_list =
 		"It isn't a potato!!!!",
 		true,
 		"+5 hp",
-		0,
+		3,
 		sCuclet,
+		
 		function()
 		{
 			//health restore

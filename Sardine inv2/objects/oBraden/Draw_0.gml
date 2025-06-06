@@ -3,6 +3,16 @@
 //рисуем задний фон
 draw_sprite_stretched_ext(sShopBgPh, 0, 0, 0, room_width, room_height, c_white, alphaBg);
 
+//стол и всё такое
+draw_sprite_ext(sTable,			0, 0,	256, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sBottleTwo,		0, 463, 240, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sBottleThree,	0, 527, 160, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sBottleOne,		0, 167, 208, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sBottleFour,	0, 98,	223, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sBottleThree,	0, 66,	184, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sBottleFour,	0, 561, 251, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sBottleTwo,		0, 128, 256, 1, 1, 0, c_white, 1);
+
 //рисуем себя
 draw_self();
 

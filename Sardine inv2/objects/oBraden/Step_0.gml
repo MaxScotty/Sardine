@@ -68,29 +68,17 @@ if !sleep
 //показ инвентаря после стартового диалога
 if is_start_textbox_created && !instance_exists(oTextbox)
 {
-	//ставим точку к которой будет двигаться персонаж
-	yy = room_height-sprite_height;
-		
 	//понижаем таймер если он больше чем 0
 	if timerWaitAfterDialog > 0
 	{
-		//если y равен yy
-		if round(y) == yy
-		{
-			//понижаем непрозрачность всех элементов слоя ассетов
-			for (var i = 0; i < array_length(layer_assets_IDs); i++)
-			{
-				var _id = layer_assets_IDs[i];
-		
-				layer_sprite_alpha(_id, clamp(layer_sprite_get_alpha(_id)-0.05, 0, 1));
-			}
-			timerWaitAfterDialog--;
-		}
+		timerWaitAfterDialog--;
 	} else
 	{	
 		//если не существует диалога
 		if !instance_exists(oTextbox)
 		{
+			//layer_depth(layer_get_id(layer_assets), depth+100);
+			
 			//показываем магазин
 			showShop = true;	
 			
@@ -100,18 +88,21 @@ if is_start_textbox_created && !instance_exists(oTextbox)
 	}
 }
 
-//перемещаемся вертикально по переменной yy
-y = lerp(y, yy, 0.1);
-
-
 if showShop && alphaShop >= 1 && !leave
 {
 	var _pos_sbm = posSubMenu;
 	
 	pos += input_check_pressed("down")-input_check_pressed("up");
 	
-	if pos < 0 { pos = array_length(braden_items)-1; };
-	if pos >= array_length(braden_items) { pos = 0; };
+	if posSubMenu == 0
+	{
+		if pos < 0 { pos = array_length(braden_items)-1; };
+		if pos >= array_length(braden_items) { pos = 0; };
+	} else
+	{
+		if pos < 0 { pos = array_length(player_items)-1; };
+		if pos >= array_length(player_items) { pos = 0; };
+	}
 	
 	//прибавляем к суб меню нажатия и ограничиваем от 0 до 1
 	posSubMenu = clamp(posSubMenu + (keyboard_check_pressed(ord("R")) - keyboard_check_pressed(ord("Q"))), 0, 1);
@@ -185,3 +176,5 @@ if leave
 //		room_restart();
 //	}
 //}
+
+//show_debug_message(layer_assets_IDs);
