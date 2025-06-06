@@ -1,21 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oBraden",
+  "%Name":"obj_fade_in_out",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oBraden",
+  "name":"obj_fade_in_out",
   "overriddenProperties":[],
   "parent":{
-    "name":"ShopTest",
-    "path":"folders/Objects/ShopTest.yy",
+    "name":"Sardine inv2",
+    "path":"Sardine inv2.yyp",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -32,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sBradenSleeps",
-    "path":"sprites/sBradenSleeps/sBradenSleeps.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

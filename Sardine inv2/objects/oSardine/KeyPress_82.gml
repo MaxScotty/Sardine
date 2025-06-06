@@ -1,1 +1,1 @@
-game_restart() //<- test
+//game_restart() //<- test

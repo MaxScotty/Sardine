@@ -108,7 +108,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.1.193",
+    "IDEVersion":"2024.13.0.190",
     "PackageID":"game",
     "PackageName":"game",
     "PackagePublisher":"game",
@@ -130,6 +130,7 @@
     {"id":{"name":"oBattleMenuv2","path":"objects/oBattleMenuv2/oBattleMenuv2.yy",},},
     {"id":{"name":"oBigCrystal","path":"objects/oBigCrystal/oBigCrystal.yy",},},
     {"id":{"name":"obj_attack","path":"objects/obj_attack/obj_attack.yy",},},
+    {"id":{"name":"obj_fade_in_out","path":"objects/obj_fade_in_out/obj_fade_in_out.yy",},},
     {"id":{"name":"obj_hill","path":"objects/obj_hill/obj_hill.yy",},},
     {"id":{"name":"obj_scratch","path":"objects/obj_scratch/obj_scratch.yy",},},
     {"id":{"name":"obj_transition_death","path":"objects/obj_transition_death/obj_transition_death.yy",},},
