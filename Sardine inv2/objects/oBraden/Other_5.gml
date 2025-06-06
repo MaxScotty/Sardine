@@ -1,0 +1,1 @@
+global.first_time_in_shop = false;
