@@ -164,6 +164,7 @@ if showShop && alphaShop >= 1 && !leave
 //если уходим
 if leave && !instance_exists(obj_fade_in_out)
 {
+	global.first_time_in_shop = false;
 	with (instance_create_depth(0, 0, -9999, obj_fade_in_out))
 	{	
 		spd = 0.05;
