@@ -2,6 +2,8 @@
 
 //depthstart = depth;
 
+x = 183;
+y = 0;
 
 sprite_normal = sBraden;
 sprite_sleep = sBradenSleeps;
@@ -23,9 +25,6 @@ if !global.first_time_in_shop
 {
 	sleepAnimationCount = sleepAnimationTimes;
 	sprite_index = sprite_normal;
-} else
-{
-	global.first_time_in_shop = false;	
 }
 
 //непрозрачность фона
