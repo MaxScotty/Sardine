@@ -67,7 +67,6 @@ array_push(braden_items, { Name : "Leave" });
 
 //параметры для выхода
 leave = false;
-alpha_leave = 0;
 
 //получаем индекс слота с монетами
 posCoins = item_get_slot_number(global.item_list.coin);

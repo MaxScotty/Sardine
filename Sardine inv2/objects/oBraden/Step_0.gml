@@ -1,5 +1,10 @@
 //if (live_call()) return live_result;
 
+if instance_exists(oSardine)
+{
+	oSardine.move_spd = 0;
+}
+
 /*
 sleep = (спрайт это спит + спрайт это встал). sleep = false + true (true);
 sleep = true + false (true); sleep = false + false (false); sleep = true + true (true);
@@ -159,12 +164,10 @@ if showShop && alphaShop >= 1 && !leave
 //если уходим
 if leave
 {
-	if alpha_leave < 1
+	if instance_exists(oSardine)
 	{
-		alpha_leave += 0.05;	
-	} else
-	{
-		room_goto(rCave);
+		oWarpBlock.x = oSardine.x;
+		oWarpBlock.y = oSardine.y;
 	}
 }
 

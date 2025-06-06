@@ -144,8 +144,6 @@ draw_text_color(room_width/2, room_height/2 - room_height/3, shop_name, c_white,
 
 
 
-draw_sprite_ext(sDark, 0, 0, 0, room_width, room_height, 0, c_black, alpha_leave);
-
 
 
 
