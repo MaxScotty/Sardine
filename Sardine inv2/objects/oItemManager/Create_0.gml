@@ -184,15 +184,15 @@ global.item_list =
 	
 	green_tea : new create_item(
 		"Green Tea",
-		"Tasty tea. Sexy smell.",
-		"Sexy Shmexy.",
-		"+5000 hp",
+		"A healthy tea",
+		false,
+		"+10 hp",
 		2,
-		spr_green_tea,
+		sBottleMenuPH,
 		
 		function()
 		{
-			global.playerHealth += 5000;
+			global.playerHealth += 10;
 			
 			with (oItemManager)
 			{

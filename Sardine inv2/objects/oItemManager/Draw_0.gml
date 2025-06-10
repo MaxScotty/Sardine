@@ -4,6 +4,9 @@ if showInv
 {	var _xx =  camera_get_view_x(view_camera[0]) + screen_bord;
 	var _yy =  camera_get_view_y(view_camera[0]) + screen_bord;
 	
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	
 	var _sep = sep;
 	
 	var _max_line = 7;

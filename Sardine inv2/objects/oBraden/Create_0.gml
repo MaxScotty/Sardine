@@ -1,7 +1,6 @@
 //if (live_call()) return live_result;
 
 //depthstart = depth;
-
 x = 183;
 y = 0;
 
@@ -16,7 +15,7 @@ timer_blink = 30;
 sleep = true;
 
 //сколько раз повторится анимация сна
-sleepAnimationTimes = 3;
+sleepAnimationTimes = 2;
 
 //счётчик этой анимации
 sleepAnimationCount = 0;
@@ -59,8 +58,9 @@ posSubMenu = 0;
 braden_items = [];
 
 //добавляем предметы
-repeat 5
-	array_push(braden_items, global.item_list.green_tea);
+//repeat 5
+array_push(braden_items, global.item_list.green_tea);
+array_push(braden_items, global.item_list.cuclet);
 
 //кнопка выхода
 array_push(braden_items, { Name : "Leave" });
