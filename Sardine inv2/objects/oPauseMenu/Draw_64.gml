@@ -1,7 +1,11 @@
-//depth = -9999;
+depth = -9999;
+
+display_set_gui_size(1920, 1080);
+
+//draw_text(0, 0, "TEST");
 
 if(pause) {
-
+	
 	//width and height of menu
 	var _new_w = 0;
 	for (var i = 0; i < op_length; i++)
@@ -13,11 +17,11 @@ if(pause) {
 	height = op_border*2 + string_height(option[0, 0]) + (op_length - 1)*op_space;
 
 	//center menu
-	x =camera_get_view_width(view_camera[0])*2- width/2;
-	y =camera_get_view_height(view_camera[0])*2 - height/2;
+	//x =camera_get_view_width(view_camera[0])*2- width/2;
+	//y =camera_get_view_height(view_camera[0])*2 - height/2;
 	//draw the menu background
-	var _xbg = x-430;
-	var _ybg = y-300;
+	var _xbg = display_get_gui_width()/2-width*1.5;
+	var _ybg = display_get_gui_height()/2-height*1.5;
 	draw_sprite_ext(sprite_index, image_index, _xbg, _ybg, width/sprite_width*3, height/sprite_height * 3.5, 0, c_white, 1);
 
 	//draw the options

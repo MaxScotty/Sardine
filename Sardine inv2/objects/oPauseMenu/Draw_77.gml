@@ -3,6 +3,8 @@
 if(pause)
 {
     surface_set_target(application_surface);
+	draw_clear_alpha(c_black, 0);
+	
     if (surface_exists(pauseSurf)) draw_surface(pauseSurf, 0, 0);
     else
     {
@@ -24,6 +26,7 @@ if (input_check_pressed("pause"))
 		
 	    pauseSurf = surface_create(resW, resH);
         surface_set_target(pauseSurf);
+			draw_clear_alpha(c_black, 0);
             draw_surface(application_surface, 0, 0);
         surface_reset_target();
 
@@ -34,3 +37,12 @@ if (input_check_pressed("pause"))
 }
 
 gpu_set_blendenable(true);
+
+//if (input_check_pressed("pause"))
+//{
+//	pause = true;
+//	instance_deactivate_all(true);
+//	instance_activate_object(input_controller_object)
+//	instance_activate_object(oUI)	
+//}
+
