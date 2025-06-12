@@ -1,0 +1,1 @@
+global.playerHealth = clamp(global.playerHealth, 0, global.playerHealthMax);

@@ -100,7 +100,7 @@ if posSubMenu == 0
 		}
 		
 		//рисуем предметы бурбамелы
-		draw_text_color(room_width/2 - room_width/5 + 48, room_height/2 - room_height*0.4+48+32*i, /* добавляем "-", если i не на кнопке выхода */ $"{(i != array_length(braden_items)-1) ? ("-") : ("")}{item.Name}", _c, _c, _c,_c, 1);	
+		draw_text_color(room_width/2 - room_width/5 + 48 + ((i == array_length(braden_items)-1) ? (48) : (0)), room_height/2 - room_height*0.4+48+32*i, /* добавляем "-", если i не на кнопке выхода */ $"{(i != array_length(braden_items)-1) ? ("-") : ("")}{item.Name}", _c, _c, _c,_c, 1);	
 	}
 }
 else
@@ -130,7 +130,7 @@ else
 			_number = $" ({item.number})";	
 		}
 		
-		draw_text_color(room_width/2 - room_width/5 + 48, room_height/2 - room_height*0.4+48+32*i, /* добавляем "-", если i не на кнопке выхода */ $"{(i != array_length(player_items)-1) ? ("-") : ("")}{item.Name}{_number}", _c, _c, _c,_c, 1);	
+		draw_text_color(room_width/2 - room_width/5 + 48 + ((i == array_length(player_items)-1) ? (48) : (0)), room_height/2 - room_height*0.4+48+32*i, /* добавляем "-", если i не на кнопке выхода */ $"{(i != array_length(player_items)-1) ? ("-") : ("")}{item.Name}{_number}", _c, _c, _c,_c, 1);	
 	}
 }
 //draw_text_color(room_width/2 - room_width/5 + 48, room_height/2 - room_height*0.4+48+32*i, );
