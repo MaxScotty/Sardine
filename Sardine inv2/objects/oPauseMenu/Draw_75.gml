@@ -1,3 +1,5 @@
+//depth = -9999;
+
 if(pause) {
 
 //width and height of menu

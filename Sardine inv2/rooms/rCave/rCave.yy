@@ -23,7 +23,6 @@
     {"name":"inst_6E92875E","path":"rooms/rCave/rCave.yy",},
     {"name":"inst_22068AE3","path":"rooms/rCave/rCave.yy",},
     {"name":"inst_CA1D1B0","path":"rooms/rCave/rCave.yy",},
-    {"name":"inst_2F7221D","path":"rooms/rCave/rCave.yy",},
     {"name":"inst_FFC906B","path":"rooms/rCave/rCave.yy",},
     {"name":"inst_1656CDF5","path":"rooms/rCave/rCave.yy",},
     {"name":"inst_1B3EE6B8","path":"rooms/rCave/rCave.yy",},
@@ -55,7 +54,6 @@
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Managers","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v2","%Name":"inst_2F7221D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2F7221D","objectId":{"name":"oPauseMenu","path":"objects/oPauseMenu/oPauseMenu.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-64.0,"y":0.0,},
         {"$GMRInstance":"v2","%Name":"inst_FFC906B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_FFC906B","objectId":{"name":"oLightRender","path":"objects/oLightRender/oLightRender.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":-32.0,},
         {"$GMRInstance":"v2","%Name":"inst_2D31E53C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2D31E53C","objectId":{"name":"oBlackCatNPCTest","path":"objects/oBlackCatNPCTest/oBlackCatNPCTest.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":null,"propertyId":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
