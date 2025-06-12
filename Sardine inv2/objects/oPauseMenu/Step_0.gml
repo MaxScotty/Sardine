@@ -8,12 +8,6 @@
 //    }
 //}
 
-if !pause {
-image_alpha = 0;
-} else {
-image_alpha = 1;
-}
-
 //get imputs
 upKey = input_check_pressed("up")//keyboard_check_pressed(vk_up); 
 downKey = input_check_pressed("down");

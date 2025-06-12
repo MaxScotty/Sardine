@@ -21,13 +21,10 @@ var _horizKey = KeyRight - KeyLeft;
 var _vertKey = KeyDown - KeyUp;
 dir = point_direction(0, 0, _horizKey, _vertKey);
 
-var _spd = 0;
-var _inputLevel = point_distance(0, 0, _horizKey, _vertKey);
-_inputLevel =  clamp(_inputLevel, 0, 1);
-_spd = move_spd * _inputLevel;
+var _dist = point_distance(0, 0, _horizKey*move_spd, _vertKey*move_spd);
 
-xspd = lengthdir_x(_spd, dir);
-yspd = lengthdir_y(_spd, dir);
+xspd = lengthdir_x(_dist, dir);
+yspd = lengthdir_y(_dist, dir);
 
 if timer > 0 
 {
