@@ -29,6 +29,16 @@ if(is_opening)
 		CreateTextbox(text_id);
 		//text_id = "ObtainingCoins";
 		
-		item_add(global.item_list.coin, coin_number);
+		switch(loot)
+		{
+			case coin_number:
+			item_add(global.item_list.coin, coin_number);
+			break;
+			
+			case potion_loot:
+			item_add(global.item_list.green_tea, potion_loot);
+			break;
+		}
+		
 	}
 }

@@ -144,6 +144,10 @@ switch(_text_id) {
 		TextScript("You have obtained " + string(oChest.coin_number) + " coins");
 		//TextScript("You have obtained 5 coins");
 		break;
+	
+	case "ObtainingPotion":
+		TextScript("You have obtained " + string(oChest.potion_loot) + " potion");
+		break;
 		
 	case "BradenShopStartDialog":
 		if global.first_time_in_shop
