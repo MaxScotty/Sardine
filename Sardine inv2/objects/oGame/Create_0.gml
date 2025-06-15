@@ -15,6 +15,8 @@ global.canUseItem = false;
 
 global.first_time_in_shop = true;
 
+global.gameSaveSlot = 0;
+
 
 
 
