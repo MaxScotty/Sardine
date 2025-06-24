@@ -44,7 +44,10 @@ if acceptKey{
                 //settings
                 case 1: menu_level = SETTINGS ; break;
                 //quit game
-                case 2: game_end(); break;
+                case 2: 
+					SaveGame();
+					game_end(); 
+					break;
                 }
             break;
             

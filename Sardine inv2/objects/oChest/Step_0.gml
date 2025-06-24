@@ -20,7 +20,7 @@ if(is_opening)
 	if(round(image_index) >= image_number - 1)
 	{
 		is_opening = true;
-		is_opened = true;
+		global.is_opened = true;
 		
 		image_speed = 0;
 		image_index = image_number - 1;

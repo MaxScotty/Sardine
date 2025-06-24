@@ -9,7 +9,7 @@ function ActivateFlower(){
 	//if _difItem != -1 {_hasFlower = false;}
 	//if _diffItem != -1 {_hasFlower = false;}
 	
-	switch (oGame.QuestStatus[? "The flower quest"])
+	switch (global.QuestStatus[? "The flower quest"])
 	{
 		case 0: //not started
 		{

@@ -11,8 +11,8 @@
   "name":"oWarp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Objects/Managers.yy",
+    "name":"Test",
+    "path":"folders/Objects/Test.yy",
   },
   "parentObjectId":{
     "name":"oPauser",

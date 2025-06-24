@@ -77,7 +77,7 @@ switch(_text_id) {
 	break;
 	case "Quest - yes":
 		TextScript("Don't come back withough the flower!", "OtherCharacter");
-		oGame.QuestStatus[? "The flower quest"] = 1;
+		global.QuestStatus[? "The flower quest"] = 1;
 		break;
 	case "Quest - no":
 		TextScript("Heh, good luck waiting lol!", "OtherCharacter");
@@ -106,13 +106,13 @@ switch(_text_id) {
 			instance_destroy(oTextbox);
 			
         } else {
-			if oGame.QuestStatus[? "The flower quest"] == 2
+			if global.QuestStatus[? "The flower quest"] == 2
             {
                 GameScript("Quest Completed - yes yes");    
                 //oGame.textbox_text_id = "Quest Completed - finish";
             }
             
-            if oGame.QuestStatus[? "The flower quest"] == 3
+            if global.QuestStatus[? "The flower quest"] == 3
             {
                 GameScript("Quest Completed - finish");
             } 
@@ -125,7 +125,7 @@ switch(_text_id) {
 		TextScript("And you are getting...", "OtherCharacter");
 		TextScript("One more 'Thanks'!", "OtherCharacter");
 		TextScript("Because the happiness of the person you helped, is the best reward", "OtherCharacter");
-		oGame.QuestStatus[? "The flower quest"] = 3;
+		global.QuestStatus[? "The flower quest"] = 3;
 		break;
 	
 	case "Quest Completed - no":

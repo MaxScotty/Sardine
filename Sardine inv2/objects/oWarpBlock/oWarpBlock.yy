@@ -9,8 +9,8 @@
   "name":"oWarpBlock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Walls",
-    "path":"folders/Objects/Walls.yy",
+    "name":"Test",
+    "path":"folders/Objects/Test.yy",
   },
   "parentObjectId":null,
   "persistent":false,

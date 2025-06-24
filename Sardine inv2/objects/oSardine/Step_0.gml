@@ -351,9 +351,9 @@ if place_meeting(x, y-move_spd, oWall)
 
 if global.set_quest_flower_to_2
 {
-	if oGame.QuestStatus[? "The flower quest"] == 1
+	if global.QuestStatus[? "The flower quest"] == 1
 	{
-		oGame.QuestStatus[? "The flower quest"] = 2;	
+		global.QuestStatus[? "The flower quest"] = 2;	
 		global.set_quest_flower_to_2 = false;
 	}
 }

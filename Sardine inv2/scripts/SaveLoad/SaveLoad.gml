@@ -1,4 +1,4 @@
-//save load scripts
+//Saving
 function SaveGame()
 {
 	var _map = ds_map_create();
@@ -10,14 +10,16 @@ function SaveGame()
 	_map[? "ItemList"] = global.item_list;
 	_map[? "CanUseItem"] = global.canUseItem;
 	_map[? "AiGridNPC"] = global.AIgrid;
+	_map[? "ChestIsOpened"] = global.is_opened;
 	
 	var _questMap = ds_map_create();
-	ds_map_copy(_questMap, oGame.QuestStatus);
-	ds_map_add_map(_map, "questStatus", _questMap);
+	ds_map_copy(_questMap, global.QuestStatus);
+	ds_map_add_map(_map, "QuestStatus", _questMap);
 	
 	//save everything on string
 	var _string = json_encode(_map);
 	SaveStringToFile("save" + string(global.gameSaveSlot) + ".sav", _string);
+	//show_debug_message(_string);
 	
 	ds_map_destroy(_map);
 	show_debug_message("game saved!");
@@ -29,4 +31,44 @@ function SaveStringToFile(_filename, _string)
 	buffer_write(_buffer, buffer_string, _string);
 	buffer_save(_buffer, _filename);
 	buffer_delete(_buffer);
+}
+
+//Loading
+function LoadGame(_slot)
+{
+	global.gameSaveSlot = _slot;
+	var _file = "save" + string(global.gameSaveSlot) + ".sav";
+	if(file_exists(_file))
+	{
+		var _json = LoadJSONFromFile(_file);
+		
+		//global.variables
+		room = _json[? "room"];
+		global.playerHealth = _json[? "playerHealth"];
+		global.playerHealthMax = _json[? "playerHealthMax"];
+		global.first_time_in_shop = _json[? "FirstTimeInShop"];
+		global.item_list = _json[? "ItemList"];
+		global.canUseItem = _json[? "CanUseItem"];
+		global.AIgrid = _json[? "AiGridNPC"];
+		global.is_opened = _json[? "ChestIsOpened"];
+				
+		//questData
+		ds_map_copy(global.QuestStatus, _json[? "QuestStatus"]);
+
+		return true;
+	}
+	else
+	{
+		show_debug_message("no save in this slot")
+		return false;
+	}
+}
+
+function LoadJSONFromFile(_filename)
+{
+	var _bufferLoad = buffer_load(_filename);
+	var _stringLoad = buffer_read(_bufferLoad, buffer_string);
+	buffer_delete(_bufferLoad);
+	var _json = json_decode(_stringLoad);
+	return _json;
 }
