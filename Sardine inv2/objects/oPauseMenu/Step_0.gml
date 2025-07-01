@@ -45,6 +45,7 @@ if acceptKey{
                 case 1: menu_level = SETTINGS ; break;
                 //quit game
                 case 2: 
+					instance_activate_object(oItemManager);
 					SaveGame();
 					game_end(); 
 					break;
