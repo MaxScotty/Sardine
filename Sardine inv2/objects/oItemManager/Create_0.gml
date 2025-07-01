@@ -208,6 +208,8 @@ for (var i = 0; i < 14; i++)
 	inv[i] = noone;	
 }
 
+
+
 sep = 28;
 screen_bord = 19;
 
