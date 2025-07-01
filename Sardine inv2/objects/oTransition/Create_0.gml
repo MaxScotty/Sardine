@@ -1,11 +1,4 @@
-enum TRANS_TYPE
-{
-	SLIDE,
-	FADE,
-	PUSH,
-	STAR,
-	WIPE
-}
+
 
 T_width = 1920;
 T_height = 1080;

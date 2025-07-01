@@ -2,15 +2,27 @@
 /// @arg Type
 /// @arg TargetRoom
 
-if (!instance_exists(oTransition))
+function RoomTransition(Type, TargetRoom)
 {
-	with (instance_create_depth(0, 0, -9999, oTransition))
+	if (!instance_exists(oTransition))
 	{
-		type = argument[0];
-		target = argument[1];
+		with (instance_create_depth(0, 0, -9999, oTransition))
+		{
+			type = Type;
+			target = TargetRoom;
+		}
+	}
+	else
+	{
+		show_debug_message("Trying to transition, while transition is happening")
 	}
 }
-else
+
+enum TRANS_TYPE
 {
-	show_debug_message("Trying to transition, while transition is happening")
+	SLIDE,
+	FADE,
+	PUSH,
+	STAR,
+	WIPE
 }

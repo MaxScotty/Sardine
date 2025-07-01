@@ -1,9 +1,15 @@
+
+oSardine.move_spd = 0;
+
 if(leading == OUT)
 {
 	percent = min(1, percent + TRANSITION_SPEED);
 	if(percent >= 1)
 	{
-		room_goto(target);
+		oSardine.x = global.TargetX;
+		oSardine.y = global.TargetY;
+		oSardine.face = global.TargetDirection;
+		room_goto(global.TargetRoom);
 		leading = IN;
 	}
 }
