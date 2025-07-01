@@ -8,6 +8,10 @@
 #macro DIES 4
 #macro DEAD 5
 
+#macro TRANSITION_SPEED 0.02
+#macro OUT 0.0
+#macro IN 1.0
+
 
 enum ENEMYSTATE
 {

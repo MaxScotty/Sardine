@@ -1,4 +1,4 @@
-target_x = 767;
-target_y = 192;
+target_x = 736;
+target_y = 223;
 target_rm = rCave;
 target_face = DOWN;
