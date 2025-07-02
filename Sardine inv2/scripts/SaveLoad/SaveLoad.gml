@@ -74,16 +74,15 @@ function LoadGame(_slot)
 				
 		//item data
 		var _num = _json[? "InvSize"];
-		oItemManager.inv = array_create(_num);
 		for (var i = 0; i < _num; i++)
 		{
 			if _json[? "Inv"+string(i)] != noone
 			{
-				oItemManager.inv[i].number = _json[? "InvNumber"+string(i)];
 				oItemManager.inv[i] = struct_get(global.item_list, _json[? "Inv"+string(i)] );
-				
+				oItemManager.inv[i].number = _json[? "InvNumber"+string(i)];
 			} else
 			{
+				if oItemManager.inv[i] != noone { oItemManager.inv[i].number = 0; };
 				oItemManager.inv[i] = noone;
 			}
 		}
