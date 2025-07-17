@@ -245,7 +245,7 @@ if (xspd == 0 and yspd ==0)
 						ds_list_add(hitByAttack, hitIDenemy);
 						with(hitIDenemy)
 						{
-							HurtEnemy(id, 5, other.id, 10);
+							HurtEnemy(id, global.damage, other.id, 10);
 						}
 					}
 				}

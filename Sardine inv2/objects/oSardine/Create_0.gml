@@ -179,6 +179,27 @@ flashShader = shWhiteFlash;
 //}
 
 //#endregion
+global.damage = 5;
 
 canHurtEnemy = true;
 
+global.level = 1;
+global.xp = 0;
+global.xp_required = 100;
+
+function add_xp(_xp_to_add)
+{
+	global.xp += _xp_to_add;
+	if(global.xp >= global.xp_required)
+	{
+		global.level++;
+		global.xp -= global.xp_required;
+		global.xp_required *= 1.4;
+		
+		global.playerHealthMax *= 0.5;
+		global.playerHealth = global.playerHealthMax;
+		global.damage *= 2;
+		
+		
+	}
+}

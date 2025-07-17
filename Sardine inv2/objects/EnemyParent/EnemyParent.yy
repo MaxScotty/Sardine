@@ -38,6 +38,7 @@
     {"$GMObjectProperty":"v1","%Name":"enemyForceTouch","filters":[],"listItems":[],"multiselect":false,"name":"enemyForceTouch","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"32","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"enemyDamageTouch","filters":[],"listItems":[],"multiselect":false,"name":"enemyDamageTouch","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"entityHitScript","filters":[],"listItems":[],"multiselect":false,"name":"entityHitScript","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"XpValue","filters":[],"listItems":[],"multiselect":false,"name":"XpValue","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

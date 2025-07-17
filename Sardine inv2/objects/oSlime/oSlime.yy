@@ -10,6 +10,7 @@
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"EnemyParent","path":"objects/EnemyParent/EnemyParent.yy",},"propertyId":{"name":"enemyHP","path":"objects/EnemyParent/EnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"15",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"EnemyParent","path":"objects/EnemyParent/EnemyParent.yy",},"propertyId":{"name":"entityHitScript","path":"objects/EnemyParent/EnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"EntityHitSolid",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"EnemyParent","path":"objects/EnemyParent/EnemyParent.yy",},"propertyId":{"name":"XpValue","path":"objects/EnemyParent/EnemyParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"30",},
   ],
   "parent":{
     "name":"Slime",

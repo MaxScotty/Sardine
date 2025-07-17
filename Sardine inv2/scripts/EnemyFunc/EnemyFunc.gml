@@ -15,6 +15,7 @@ function HurtEnemy(_enemy, _damage, _source, _knockback){
 			if (enemyHP <= 0)
 			{
 				state = ENEMYSTATE.DIE;
+				oSardine.add_xp(XpValue);
 			}
 			else
 			{

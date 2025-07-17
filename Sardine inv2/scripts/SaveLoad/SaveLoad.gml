@@ -12,6 +12,9 @@ function SaveGame()
 	_map[? "ChestIsOpened"] = global.is_opened;
 	_map[? "TargetX"] = global.TargetX;
 	_map[? "TargetY"] = global.TargetY;
+	_map[? "Level"] = global.level;
+	_map[? "XP"] = global.xp;
+	_map[? "XP_required"] = global.xp_required;
 	
 	//inv
 	var _len = array_length(oItemManager.inv);
@@ -71,6 +74,9 @@ function LoadGame(_slot)
 		global.is_opened = _json[? "ChestIsOpened"];
 		global.TargetX = _json[? "TargetX"];
 		global.TargetY = _json[? "TargetY"];
+		global.level = _json[? "Level"];
+		global.xp = _json[? "XP"];
+		global.xp_required = _json[? "XP_required"];
 				
 		//item data
 		var _num = _json[? "InvSize"];
