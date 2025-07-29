@@ -1,7 +1,7 @@
 function ActivateFlower(){
 	var _hasFlower = false;
 	
-	if (_hasFlower == false) exit;
+	//if (_hasFlower == false) exit;
 	
 	var _item = item_get_slot_number(global.item_list.flower);
 	//var _difItem = item_get_slot_number(global.item_list.coin);

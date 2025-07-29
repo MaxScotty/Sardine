@@ -200,6 +200,28 @@ global.item_list =
 			}
 		}
 	),
+	
+	crystal: new create_item(
+		"Crystal",
+		"Lights in the darkness",
+		false,
+		"Lighting",
+		5,
+		sCrystal,
+		
+		function(){}
+	),
+	
+	wood: new create_item(
+		"Wood",
+		"First we mine, then we craft. Is this Minecraft?",
+		false,
+		"Crafting",
+		2,
+		sWood,
+		
+		function(){}
+	),
 }
 
 
@@ -235,3 +257,5 @@ inv_y = (gui_height * 0.62) - (inv_height * 0.2);
 
 item_add(global.item_list.cuclet, 4);
 item_add(global.item_list.coin, 50);
+//item_add(global.item_list.wood, 7);
+//item_add(global.item_list.crystal, 10);

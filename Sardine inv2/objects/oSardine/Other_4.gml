@@ -1,3 +1,3 @@
-SaveGame(); 
+//SaveGame(); 
 
-instance_create_layer(100, 970, "Autosave", oGameIcon)
+//instance_create_layer(100, 970, "Autosave", oGameIcon)
