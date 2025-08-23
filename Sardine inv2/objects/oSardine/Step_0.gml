@@ -188,8 +188,8 @@ if (xspd == 0 and yspd == 0 and !Animation and (sprite_index != sSardineDie) && 
 	image_index = 0;
 } 
 
-if (xspd == 0 and yspd ==0)
-{
+//if (xspd != 0 and yspd != 0)
+//{
 	if Animation == true
 	{
 		//animation
@@ -265,11 +265,11 @@ if (xspd == 0 and yspd ==0)
 			playerState = playerSprite.idle
 		}
 	}
-}
+//}
 else 
 {
 	canHurtEnemy = true;
-	Animation = false
+	Animation = false;
 }
 
 //if _getAttack >= 1
