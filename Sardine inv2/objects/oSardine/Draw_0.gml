@@ -15,5 +15,6 @@ else
 	
 	if(shader_current() != -1) shader_reset();
 }
+ 
 
-//draw_text_ext_transformed(x, y, global.playerHealth, 10, 300, 3, 3, 0);
+//draw_text_ext_transformed(x, y, glob al.playerHealth, 10, 300, 3, 3, 0);
