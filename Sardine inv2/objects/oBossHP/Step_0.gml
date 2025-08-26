@@ -16,3 +16,4 @@ if(keyboard_check_pressed(vk_numpad0))
 {
 	global.BossHP += 50;
 }
+

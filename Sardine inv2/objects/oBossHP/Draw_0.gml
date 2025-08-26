@@ -10,8 +10,21 @@ var yOffset = (yPosition - round(_sprH/2));
 
 draw_sprite_ext(_spr, 0, xOffset, yOffset, 3, 3, 0, c_white, 1);
 draw_sprite_ext(_spr, 1, xOffset, yOffset, (global.BossHPPrev/global.BossHPMax) * 3, 3, 0, c_white, 1);
+
 draw_sprite_ext(_spr, 2, xOffset, yOffset, (global.BossHP/global.BossHPMax) * 3, 3, 0, c_white, 1);
+
+shader_set(sha_disering);
+
+shader_set_uniform_f(shader_get_uniform(sha_disering, "scale"), 2);
+
+draw_sprite_ext(_spr, 2, xOffset, yOffset, (global.BossHP/global.BossHPMax) * 3, 3, 0, c_white, 1);
+
+//draw_rectangle(0, 0, 128, 128, false)
+
+shader_reset();
+
 draw_sprite_ext(_spr, 3, xOffset, yOffset, 3, 3, 0, c_white, 1);
+
 
 
 //Marker 
