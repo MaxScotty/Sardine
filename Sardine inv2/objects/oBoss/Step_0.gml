@@ -1,4 +1,5 @@
 if (keyboard_check_pressed(vk_space) && !is_jumping) {
+	
     is_jumping = true;
     jump_timer = 0;
     target_Bx = oSardine.x;

@@ -10,3 +10,8 @@ target_Bx = 0;
 target_By = 0;
 
 launch_curve = 1.8;
+
+
+shadow_x = x;
+shadow_y = y;
+shadow_minus_range = 0;
