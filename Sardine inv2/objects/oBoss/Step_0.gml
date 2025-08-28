@@ -20,6 +20,9 @@ if (is_jumping) {
     else if (jump_timer < jump_duration) {
         x = lerp(x, target_Bx, 0.02);
         if (y > -100) y = -sprite_height;
+		
+		xx = x;
+		yy = y;
     } 
     else {
         y += crash_speed;
