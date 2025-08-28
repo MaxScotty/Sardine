@@ -15,3 +15,8 @@ launch_curve = 1.8;
 shadow_x = x;
 shadow_y = y;
 shadow_minus_range = 0;
+
+xx = 0;
+yy = 0;
+
+img_xscale = image_xscale;
