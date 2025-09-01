@@ -1,6 +1,6 @@
 jump_power = 35;          
 crash_speed = 60;         
-jump_duration = 180;      
+jump_duration = 360;      
 //crash_radius = 120;       
 damage = 40;              
 
