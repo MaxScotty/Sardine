@@ -1,6 +1,8 @@
 
 draw_set_color(c_black);
-draw_set_alpha((jump_timer < jump_duration) ? (0.25-0.5*jump_timer/jump_duration) : (0.5 - point_direction(x, y, x, target_By)/point_direction(x, yy, x, target_By)*0.5));
+draw_set_alpha((!(x == xprevious && y == yprevious)) ? ((jump_timer < jump_duration) ? (0.25-0.5*jump_timer/jump_duration) : (point_direction(x, y, x, target_By)/point_direction(x, yy, x, target_By)*0.25)) : (0.25));
+
+//show_debug_message(jump_timer < jump_duration);
 
 if is_jumping
 {	
