@@ -1,6 +1,10 @@
-var _spr = sBossHP;
-var _sprW = sprite_get_width(_spr) * 3;
-var _sprH = sprite_get_height(_spr) * 3;
+var _sprM = sHp_Boss_Main;
+var _sprL = sHp_Boss_Load;
+var _sprE = sHp_Boss_end;
+var _sprC = sHp_Boss_cover;
+
+var _sprW = sprite_get_width(_sprM) * 3;
+var _sprH = sprite_get_height(_sprM) * 3;
 
 var xPosition = room_width/2;
 var yPosition = 50;
@@ -13,14 +17,15 @@ draw_sprite_ext(_spr, 1, xOffset, yOffset, (global.BossHPPrev/global.BossHPMax) 
 draw_sprite_ext(_spr, 2, xOffset, yOffset, (global.BossHP/global.BossHPMax) * 3, 3, 0, c_white, 1);
 draw_sprite_ext(_spr, 3, xOffset, yOffset, 3, 3, 0, c_white, 1);*/
 
-//var _number = sprite_get_number(_spr) - 1;
-var _img = (global.BossHP/global.BossHPMax); //*_number
-var _imgPrev = (global.BossHPPrev/global.BossHPMax); //*_number
+var _numberL = sprite_get_number(_sprL) - 1;
+var _numberM = sprite_get_number(_sprM) - 1;
+var _img = (global.BossHP/global.BossHPMax * _numberL);
+var _imgPrev = (global.BossHPPrev/global.BossHPMax * _numberM);
 
-draw_sprite_ext(_spr, 0, xOffset, yOffset, 3, 3, 0, c_white, 1);
-draw_sprite_ext(_spr, 1, xOffset, yOffset, _imgPrev * 3, 3, 0, c_white, 1);
-draw_sprite_ext(_spr, 2, xOffset, yOffset, _img * 3, 3, 0, c_white, 1);
-draw_sprite_ext(_spr, 3, xOffset, yOffset, 3, 3, 0, c_white, 1);
+draw_sprite_ext(_sprE, image_index, xOffset, yOffset, 3, 3, 0, c_white, 1);
+draw_sprite_ext(_sprL, _imgPrev, xOffset, yOffset, 3, 3, 0, c_white, 1);
+draw_sprite_ext(_sprM, _img, xOffset, yOffset, 3, 3, 0, c_white, 1);
+draw_sprite_ext(_sprC, image_index, xOffset, yOffset, 3, 3, 0, c_white, 1);
 
 
 
