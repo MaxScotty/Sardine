@@ -1,3 +1,8 @@
+if (global.BossHP < 100 && oBoss.boss_phase == 2) {
+    global.BossHP = min(global.BossHP + 2, global.BossHPMax);
+}
+
+
 followUpTimer = clamp(followUpTimer - 1, 0, followUpTimerMax);
 
 if (followUpTimer == 0)
@@ -16,4 +21,3 @@ if(keyboard_check_pressed(vk_numpad0))
 {
 	global.BossHP += 50;
 }
-

@@ -615,6 +615,7 @@
     {"id":{"name":"sBonkRight","path":"sprites/sBonkRight/sBonkRight.yy",},},
     {"id":{"name":"sBonkUp","path":"sprites/sBonkUp/sBonkUp.yy",},},
     {"id":{"name":"sBoss","path":"sprites/sBoss/sBoss.yy",},},
+    {"id":{"name":"sBoss2","path":"sprites/sBoss2/sBoss2.yy",},},
     {"id":{"name":"sBossHP","path":"sprites/sBossHP/sBossHP.yy",},},
     {"id":{"name":"sBottleFour","path":"sprites/sBottleFour/sBottleFour.yy",},},
     {"id":{"name":"sBottleMenuPH","path":"sprites/sBottleMenuPH/sBottleMenuPH.yy",},},

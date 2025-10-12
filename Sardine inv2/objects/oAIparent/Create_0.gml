@@ -10,4 +10,3 @@ pathNextPoint = 0;
 
 pathPointX = 0;
 pathPointY = 0;
-

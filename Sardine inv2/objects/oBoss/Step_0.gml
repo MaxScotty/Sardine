@@ -1,3 +1,40 @@
+//phase
+if (boss_phase == 1 && global.BossHP <= 0 && !phase_transition)
+{
+	boss_phase = 2;
+	phase_transition = true;
+	transition_timer = 0;
+	
+	global.BossHPMax = 2000;
+	global.BossHP = global.BossHPMax;
+	
+	is_jumping = false;
+}
+
+//transition to phase
+if (phase_transition)
+{
+	transition_timer++;
+	
+	if(transition_timer < 30)
+	{
+		if(transition_timer % 10 == 0)
+		{
+			is_shaking = true;
+            alarm_set(0, 0.2 * room_speed);
+		}
+	}
+	
+	else if (transition_timer >= transition_duration)
+	{
+		phase_transition = false;
+		
+		sprite_index = spr_phase_2;
+		
+		//improving characteristics
+	}
+}
+
 // shaking
 if(is_shaking)
 {
@@ -79,3 +116,20 @@ if (is_jumping) {
         }
     }
 //}
+// moving
+if (boss_phase == 2 && !phase_transition && !is_jumping) {
+    var move_speed = 1.5;
+    var dir_x = oSardine.x - x;
+    var dir_y = oSardine.y - y;
+    var dist = point_distance(x, y, oSardine.x, oSardine.y);
+    
+    if (dist > 50) { 
+        if (dist > 0) {
+            dir_x /= dist;
+            dir_y /= dist;
+        }
+        
+        x += dir_x * move_speed;
+        y += dir_y * move_speed;
+    }
+}

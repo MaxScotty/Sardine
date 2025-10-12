@@ -31,3 +31,15 @@ camera_position_y = camera_get_view_y(Camera);
 is_shaking = false;
 shake_amount = 10;
 shake_timer = 0.2;
+
+//phases
+boss_phase = 1;
+phase_transition = false;
+transition_timer = 0;
+transition_duration = 90;
+
+spr_phase_1 = sBoss;
+spr_phase_2 = sBoss2;
+//transition sprite
+
+
