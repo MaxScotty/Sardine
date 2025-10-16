@@ -51,5 +51,5 @@ shoot_timer = shoot_time.walk;
 
 is_shooting = false;
 
-time_per_shoot = 30;
+time_per_shoot = 10;
 timer_per_shoot = time_per_shoot;
