@@ -42,4 +42,14 @@ spr_phase_1 = sBoss;
 spr_phase_2 = sBoss2;
 //transition sprite
 
+shoot_time =
+{
+	walk :		300,
+	shoot :		240,
+}
+shoot_timer = shoot_time.walk;
 
+is_shooting = false;
+
+time_per_shoot = 30;
+timer_per_shoot = time_per_shoot;

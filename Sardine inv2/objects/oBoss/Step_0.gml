@@ -129,7 +129,43 @@ if (boss_phase == 2 && !phase_transition && !is_jumping) {
             dir_y /= dist;
         }
         
-        x += dir_x * move_speed;
-        y += dir_y * move_speed;
-    }
+		if !is_shooting
+		{
+	        x += dir_x * move_speed;
+	        y += dir_y * move_speed;
+		}
+	}
+	
+	shoot_timer--;
+	if shoot_timer <= 0
+	{
+		is_shooting = !is_shooting;
+		
+		if is_shooting
+		{
+			shoot_timer = shoot_time.shoot;	
+		} else
+		{
+			shoot_timer = shoot_time.walk;	
+		}
+	}
+}
+
+if is_shooting
+{
+	timer_per_shoot--;
+	if timer_per_shoot <= 0
+	{
+		var _dir = point_direction(x, y, oSardine.x, oSardine.y);
+		
+		var _rot = random_range(-5, 5);
+		
+		with (instance_create_depth(x, y-sprite_height/2, depth+5, oSlimeBullet))
+		{
+			motion_set(_dir, random_range(20, 30));	
+			rotation_speed = _rot;
+		}
+		
+		timer_per_shoot = time_per_shoot;
+	}	
 }
