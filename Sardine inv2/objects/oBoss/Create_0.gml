@@ -53,3 +53,12 @@ is_shooting = false;
 
 time_per_shoot = 10;
 timer_per_shoot = time_per_shoot;
+
+shoot_attacks =
+{
+	to_player :	0,
+	around :		1,
+	all_sides :	2,
+}
+
+shoot_attack = shoot_attacks.to_player;

@@ -144,6 +144,7 @@ if (boss_phase == 2 && !phase_transition && !is_jumping) {
 		if is_shooting
 		{
 			shoot_timer = shoot_time.shoot;	
+			shoot_attack = choose(0, 1, 2);
 		} else
 		{
 			shoot_timer = shoot_time.walk;	
@@ -154,18 +155,46 @@ if (boss_phase == 2 && !phase_transition && !is_jumping) {
 if is_shooting
 {
 	timer_per_shoot--;
+	
 	if timer_per_shoot <= 0
 	{
-		var _dir = point_direction(x, y, oSardine.x, oSardine.y);
-		
 		var _rot = random_range(-5, 5);
 		
-		with (instance_create_depth(x, y-sprite_height/2, depth+5, oSlimeBullet))
-		{
-			motion_set(_dir, random_range(20, 30));	
-			rotation_speed = _rot;
+		if shoot_attack == shoot_attacks.to_player
+		{	
+			var _dir = point_direction(x, y, oSardine.x, oSardine.y);
+		
+			with (instance_create_depth(x, y-sprite_height/2, depth+5, oSlimeBullet))
+			{
+				motion_set(_dir, random_range(20, 30));	
+				rotation_speed = _rot;
+			}
 		}
 		
+		if shoot_attack == shoot_attacks.around
+		{		
+			with (instance_create_depth(x, y-sprite_height/2, depth+5, oSlimeBullet))
+			{
+				motion_set(point_direction(0, 0, sin(current_time/250), cos(current_time/250)), random_range(20, 30));	
+				rotation_speed = _rot;
+			}	
+		}
+		
+		if shoot_attack == shoot_attacks.all_sides
+		{
+			var _plus = random_range(30, 60);
+			
+			for (var i = 0; i < 360; i += _plus)
+			{
+				with (instance_create_depth(x, y-sprite_height/2, depth+5, oSlimeBullet))
+				{
+					motion_set(i, random_range(20, 30));	
+					rotation_speed = _rot;
+				}
+			}
+		}
+		
+		
 		timer_per_shoot = time_per_shoot;
-	}	
+	}
 }
