@@ -6,6 +6,12 @@ var _cam_height = camera_get_view_height(_camera);
 
 light_surface = surface_create(_cam_width, _cam_height);
 
+//camera
+camera = camera_create_view(0, 0, _cam_width, _cam_height, 0, oSardine, -1, -1, _cam_width/2, _cam_height/2);
+
+view_enabled = true;
+view_visible[0] = true;
+view_set_camera(0, camera);
 
 //-------NPC-------
 
