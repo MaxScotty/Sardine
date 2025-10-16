@@ -9,7 +9,7 @@ if (phase_transition)
 else
 {
 	draw_set_color(c_black);
-	draw_set_alpha((!(x == xprevious && y == yprevious)) ? ((jump_timer < jump_duration) ? (0.25-0.5*jump_timer/jump_duration) : (point_direction(x, y, x, target_By)/point_direction(x, yy, x, target_By)*0.25)) : (0.25));
+	draw_set_alpha((!(x == xprevious && y == yprevious)) ? ((jump_timer < jump_duration) ? (0.1-0.1*jump_timer/jump_duration) : (point_direction(x, y, x, target_By)/point_direction(x, yy, x, target_By)*0.1)) : (0.1-0.1*jump_timer/jump_duration));
 
 	if is_jumping {
 	    image_xscale = lerp(image_xscale, img_xscale/2, 0.1);

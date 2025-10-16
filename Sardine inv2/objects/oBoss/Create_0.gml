@@ -23,6 +23,8 @@ yy = 0;
 
 img_xscale = image_xscale;
 
+alarm[1] = 10;
+
 //camera
 Camera = view_camera[0];
 camera_position_x = camera_get_view_x(Camera);

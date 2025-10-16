@@ -198,3 +198,5 @@ if is_shooting
 		timer_per_shoot = time_per_shoot;
 	}
 }
+
+shadow_minus_range = max(shadow_minus_range, 0);
