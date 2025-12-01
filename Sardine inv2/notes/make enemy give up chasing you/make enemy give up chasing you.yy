@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"make enemy give up chasing you",
   "name":"make enemy give up chasing you",
   "parent":{

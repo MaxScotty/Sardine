@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"About the shaders",
   "name":"About the shaders",
   "parent":{

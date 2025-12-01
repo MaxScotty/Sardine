@@ -32,15 +32,15 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"moveDirection","filters":[],"listItems":[
+    {"$GMObjectProperty":"v2","%Name":"moveDirection","filters":[],"listItems":[
         "0",
         "90",
         "180",
         "270",
       ],"multiselect":false,"name":"moveDirection","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"270","varType":6,},
-    {"$GMObjectProperty":"v1","%Name":"entityHitScript","filters":[],"listItems":[],"multiselect":false,"name":"entityHitScript","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"entityFragmentCount","filters":[],"listItems":[],"multiselect":false,"name":"entityFragmentCount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"entityFragment","filters":[],"listItems":[],"multiselect":false,"name":"entityFragment","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"entityHitScript","filters":[],"listItems":[],"multiselect":false,"name":"entityHitScript","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"entityFragmentCount","filters":[],"listItems":[],"multiselect":false,"name":"entityFragmentCount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"entityFragment","filters":[],"listItems":[],"multiselect":false,"name":"entityFragment","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
