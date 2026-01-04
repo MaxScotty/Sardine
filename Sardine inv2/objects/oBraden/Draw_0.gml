@@ -17,7 +17,7 @@ draw_sprite_ext(sBottleTwo,		0, 128, 256, 1, 1, 0, c_white, 1);
 draw_self();
 
 
-if !showShop
+if !is_start_textbox_created
 {
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_bottom);
@@ -27,9 +27,9 @@ if !showShop
 	{
 		sprite_index = sprite_awake
 	
-		showShop = true;
+		alarm[0] = 120;
 	
-		timerWaitAfterDialog = 0;
+		timerWaitAfterDialog = 60;
 	
 		is_start_textbox_created = true;
 	
