@@ -1,5 +1,14 @@
 //сделай пожалуйста по возможности WASD передвижение (вверх,вниз,вправо,влево) спасибо <3
 //Без проблем <3
+
+
+global.damage = 5;
+
+global.level = 1;
+global.xp = 0;
+global.xp_required = 100;
+
+
 selected_item = noone; // ADDED BY ALFIE
 depth = -99999999999999999999999;
 

@@ -1,5 +1,8 @@
 //if (live_call()) return live_result;
 
+//получаем индекс слота с монетами
+posCoins = item_get_slot_number(global.item_list.coin);
+
 if instance_exists(oSardine)
 {
 	oSardine.move_spd = 0;
@@ -125,12 +128,11 @@ if showShop && alphaShop >= 1 && !leave
 		if pos != ((posSubMenu == 0) ? (array_length(braden_items)) : (array_length(player_items)))-1
 		{
 			//если суб меню = 0
-			if posSubMenu == 0
+			if posSubMenu == 0 
 			{
-				//получаем индекс слота с монетами
-				posCoins = item_get_slot_number(global.item_list.coin);
+				
 				//если хватает монет
-				if posCoins != -1 && oItemManager.inv[posCoins].number >= braden_items[pos].cost
+				if instance_exists(oItemManager) && posCoins != -1 && oItemManager.inv[posCoins].number >= braden_items[pos].cost
 				{
 					//платим
 					oItemManager.inv[posCoins].number -= braden_items[pos].cost;
@@ -185,3 +187,5 @@ if leave && !instance_exists(obj_fade_in_out)
 //}
 
 //show_debug_message(layer_assets_IDs);
+
+//posCoins = item_get_slot_number(global.item_list.coin);

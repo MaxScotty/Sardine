@@ -17,6 +17,25 @@ draw_sprite_ext(sBottleTwo,		0, 128, 256, 1, 1, 0, c_white, 1);
 draw_self();
 
 
+if !showShop
+{
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_bottom);
+	draw_text(0, room_height, "Press [SPACE] to skip");
+	
+	if keyboard_check_pressed(vk_space)
+	{
+		sprite_index = sprite_awake
+	
+		showShop = true;
+	
+		timerWaitAfterDialog = 0;
+	
+		is_start_textbox_created = true;
+	
+	}
+}
+
 //рисуем окна магазина
 
 //если не показываем магазин, то выходим из события
@@ -76,8 +95,12 @@ draw_sprite_ext(sMenu, 0, room_width/2 + room_width/4 - _cur_w/3, room_height/2 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
+show_debug_message(instance_exists(oItemManager))
+
 //получаем сколько монет
-var _coin_got = (posCoins != -1) ? (oItemManager.inv[posCoins].number) : (0);
+var _gg = item_get_slot_number(global.item_list.coin);
+
+var _coin_got = ((_gg != -1) ? (oItemManager.inv[_gg].number) : (0));
 //рисуем предметы
 if posSubMenu == 0
 {
@@ -141,7 +164,6 @@ else
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_text_color(room_width/2, room_height/2 - room_height/3, shop_name, c_white, c_white, c_white, c_white, alphaShop);
-
 
 
 

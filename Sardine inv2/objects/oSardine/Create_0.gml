@@ -179,13 +179,11 @@ flashShader = shWhiteFlash;
 //}
 
 //#endregion
-global.damage = 5;
+
 
 canHurtEnemy = true;
 
-global.level = 1;
-global.xp = 0;
-global.xp_required = 100;
+
 
 function add_xp(_xp_to_add)
 {
