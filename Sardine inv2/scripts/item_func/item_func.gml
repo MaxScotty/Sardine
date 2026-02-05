@@ -58,63 +58,63 @@ function item_add(_item, _number)
 
 function item_get_slot_number(_item, _default = -1)
 {
-	with (oItemManager)
-	{
-		for (var i = 0; i < array_length(inv); i++)
-		{
-			if inv[i] == _item
-			{
-				return i;
-			}
-		}
-	}
+	//with (oItemManager)
+	//{
+	//	for (var i = 0; i < array_length(inv); i++)
+	//	{
+	//		if inv[i] == _item
+	//		{
+	//			return i;
+	//		}
+	//	}
+	//}
 
-	return _default;	
+	//return _default;	
 }
 
 function item_get_from_pos(_posX, _posY)
 {
-	var _item = -1;
+	//var _item = -1;
 	
-	with (oItemManager)
-	{
-		switch (_posY)
-		{
-			case 0:
-				_item = inv[_posX];
-			break;
-			case 1:
-				_item = inv[_posX+7];
-			break;
-		}
-	}
-	return _item;
+	//with (oItemManager)
+	//{
+	//	switch (_posY)
+	//	{
+	//		case 0:
+	//			_item = inv[_posX];
+	//		break;
+	//		case 1:
+	//			_item = inv[_posX+7];
+	//		break;
+	//	}
+	//}
+	//return _item;
 	
 }
 
 function delete_item(_item)
 {
-	var _num = item_get_slot_number(_item, -1);
+	//var _num = item_get_slot_number(_item, -1);
 	
-	if _num == -1 { exit; };
+	//if _num == -1 { exit; };
 	
-	with (oItemManager)
-	{
-		inv[_num].number-=1;
-		if inv[_num].number <= 0 { inv[_num] = noone; };
-	}
+	//with (oItemManager)
+	//{
+	//	inv[_num].number-=1;
+	//	if inv[_num].number <= 0 { inv[_num] = noone; };
+	//}
 }
 
 function use_item(_item)
 {
-	var _num = item_get_slot_number(_item);
+	//var _num = item_get_slot_number(_item);
 	
-	if _num == -1 { exit; };
+	//if _num == -1 { exit; };
 	
-	with (oItemManager)
-	{
-		inv[_num].effect();
-	}
+	//with (oItemManager)
+	//{
+	//	inv[_num].effect();
+	//}
 }
 /// @function item_get_list_name(Предмет)
 /// @description Ищет в листе предметов название предмета которое вы ввели, и возвращает его значение как аргумент в каком-либо условии

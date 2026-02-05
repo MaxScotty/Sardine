@@ -1,3 +1,5 @@
+if (live_call()) return live_result;
+
 //сделай пожалуйста по возможности WASD передвижение (вверх,вниз,вправо,влево) спасибо <3
 //Без проблем <3
 
@@ -8,12 +10,8 @@ global.level = 1;
 global.xp = 0;
 global.xp_required = 100;
 
-
-selected_item = noone; // ADDED BY ALFIE
 depth = -99999999999999999999999;
 
-posX = 0;
-posY = 0;
 
 /*
 
@@ -43,7 +41,7 @@ enum EQUIP_STATUS
 ///////////		equip status и equip power используется только если это оружие или броня.
 ///////////		equip status может быть равен EQUIP_STATUS.ARMOR или EQUIP_STATUS.WEAPON.
 ///////////		equip power это атака или защита в зависимости от предыдущего аргумента.
-function create_item(_name, _description, _battle, _abilities, _cost, _sprite, _effect, _equip_status = -1, _equip_power = 0) constructor
+create_item = function(_name, _description, _battle, _abilities, _cost, _sprite, _effect, _equip_status = -1, _equip_power = 0) constructor
 {
 	Name = _name;
 	description = _description;
@@ -63,9 +61,8 @@ global.item_list =
 	coin : new create_item(
 		"Coin",
 		"Pay",
+		1,
 		false,
-		"Payment",
-		0,
 		sCoin,
 		function()
 		{
@@ -88,9 +85,8 @@ global.item_list =
 	cuclet : new create_item(
 		"Cuclet",
 		"It isn't a potato!!!!",
-		true,
-		"+5 hp",
 		3,
+		true,
 		sCuclet,
 		
 		function()
@@ -156,9 +152,8 @@ global.item_list =
 	flower: new create_item(
 		"Flower",
 		"A beautiful flower",
-		false,
-		"",
 		0,
+		false,
 		sFlower,
 		function()
 		{
@@ -194,9 +189,8 @@ global.item_list =
 	green_tea : new create_item(
 		"Green Tea",
 		"A healthy tea",
-		false,
-		"+10 hp",
 		2,
+		false,
 		sBottleMenuPH,
 		
 		function()
@@ -213,9 +207,8 @@ global.item_list =
 	crystal: new create_item(
 		"Crystal",
 		"Lights in the darkness",
-		false,
-		"Lighting",
 		5,
+		false,
 		sCrystal,
 		
 		function(){}
@@ -224,9 +217,8 @@ global.item_list =
 	wood: new create_item(
 		"Wood",
 		"First we mine, then we craft. Is this Minecraft?",
-		false,
-		"Crafting",
 		2,
+		false,
 		sWood,
 		
 		function(){}
@@ -234,37 +226,11 @@ global.item_list =
 }
 
 
-for (var i = 0; i < 14; i++)
-{
-	inv[i] = noone;	
-}
+posX = 0;
+posY = 0;
+
+posSection = 0;
+
+sections = ["Items", "Weapons", "Artifacts"];
 
 
-
-sep = 28;
-screen_bord = 19;
-
-showInv = false;
-
-
-
-can_swap = true;
-
-scale = 3;
-
-x_buffer = 2;
-
-gui_width = display_get_gui_width();
-gui_height = display_get_gui_height();
-
-inv_width = 235;
-inv_height = 205;
-
-inv_x = (gui_width * 0.625) - (inv_width * 0.35);
-inv_y = (gui_height * 0.62) - (inv_height * 0.2);
-
-
-item_add(global.item_list.cuclet, 4);
-item_add(global.item_list.coin, 50);
-//item_add(global.item_list.wood, 7);
-//item_add(global.item_list.crystal, 10);
