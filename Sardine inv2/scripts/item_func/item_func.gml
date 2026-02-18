@@ -1,57 +1,29 @@
 //Добавляем предметы
 
 /// @param предмет
-/// @param сколько_добавить
-/// @function item_add(Предмет, Число)
+/// @function item_add(Предмет)
 /// @description Добавляет предмет или увеличивает стак предметов в инвентаре
-function item_add(_item, _number)
+function item_add(_item)
 {
-	if _number < 1
+	if array_contains(global.inv, _item)
 	{
-		_number = 1;	
-	}
-	
-	with (oItemManager)
-	{
-		var _to = -1;
-		var _exists = false;
-	
-		//В пустой слот или если есть в тот, в котором есть
-		for (var i = 0; i < 14; i++)
-		{
-			if inv[i] == _item
+		for (var i = 0; i < array_length(global.inv); i++)
+		{	
+			if global.inv[i] == _item
 			{
-				_exists = true;
-				_to = i;
+				global.inv[i].number++;
 				break;
-			}
-		}	
-		
-		if _to == -1
+			} 
+		}
+	} else
+	{
+		for (var i = 0; i < array_length(global.inv); i++)
 		{
-			for (var i = 0; i < 14; i++)
+			if global.inv[i] == -1
 			{
-				if inv[i] == noone
-				{
-					_to = i;
-					break;
-				}
-			}	
-		}
-		
-		if _to == -1
-		{
-			show_debug_message("Нет места.")
-			exit;	
-		}
-		
-		if !_exists
-		{
-			inv[_to] = _item;
-			inv[_to].number+=_number;
-		} else
-		{
-			inv[_to].number+=_number;	
+				global.inv[i] = _item;
+				break;
+			} 
 		}
 	}
 }

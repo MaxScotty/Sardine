@@ -4,6 +4,7 @@ if (live_call()) return live_result;
 //Без проблем <3
 
 
+
 global.damage = 5;
 
 global.level = 1;
@@ -12,6 +13,12 @@ global.xp_required = 100;
 
 depth = -99999999999999999999999;
 
+
+surface = -1;
+
+showItemsRoll = 0;
+
+ext_y_items = 0;
 
 /*
 
@@ -38,32 +45,18 @@ enum EQUIP_STATUS
 	WEAPON = 1,
 }
 
-///////////		equip status и equip power используется только если это оружие или броня.
-///////////		equip status может быть равен EQUIP_STATUS.ARMOR или EQUIP_STATUS.WEAPON.
-///////////		equip power это атака или защита в зависимости от предыдущего аргумента.
-create_item = function(_name, _description, _battle, _abilities, _cost, _sprite, _effect, _equip_status = -1, _equip_power = 0) constructor
-{
-	Name = _name;
-	description = _description;
-	number = 0;
-	inBattle = _battle;
-	abilities = _abilities;
-	cost = _cost;
-	sprite = _sprite;
-	effect = _effect;
-	
-	equip_status = _equip_status;
-	equip_power = _equip_power;
-}
+
 
 global.item_list =
 {
 	coin : new create_item(
 		"Coin",
 		"Pay",
-		1,
 		false,
+		0,
+		1,
 		sCoin,
+		Coin,
 		function()
 		{
 			//do nothing
@@ -85,9 +78,11 @@ global.item_list =
 	cuclet : new create_item(
 		"Cuclet",
 		"It isn't a potato!!!!",
+		false,
+		0,
 		3,
-		true,
 		sCuclet,
+		Cuclet,
 		
 		function()
 		{
@@ -152,9 +147,11 @@ global.item_list =
 	flower: new create_item(
 		"Flower",
 		"A beautiful flower",
-		0,
 		false,
+		0,
+		0,
 		sFlower,
+		Flower,
 		function()
 		{
 			if instance_exists(oBlackCatNPCTest)
@@ -189,10 +186,11 @@ global.item_list =
 	green_tea : new create_item(
 		"Green Tea",
 		"A healthy tea",
-		2,
 		false,
+		0,
+		2,
 		sBottleMenuPH,
-		
+		-1,
 		function()
 		{
 			global.playerHealth += 10;
@@ -207,30 +205,50 @@ global.item_list =
 	crystal: new create_item(
 		"Crystal",
 		"Lights in the darkness",
-		5,
 		false,
+		0,
+		5,
 		sCrystal,
-		
+		-1,
 		function(){}
 	),
 	
 	wood: new create_item(
 		"Wood",
 		"First we mine, then we craft. Is this Minecraft?",
-		2,
 		false,
+		0,
+		2,
 		sWood,
-		
+		-1,
 		function(){}
 	),
+	
+	//potion : new create_item(
+	//"Potion",
+	//"Kills slimes and owls.",
+	//false,
+	//0,
+	//6,
+	//sCuclet,
+	//Potion,
+	//function()
+	//{
+			
+	//}),
 }
 
 
-posX = 0;
-posY = 0;
+pos = 0;
 
 posSection = 0;
 
 sections = ["Items", "Weapons", "Artifacts"];
 
+global.inv = array_create(36, -1);
 
+//global.inv_max = 36;
+
+item_add(global.item_list.flower);
+item_add(global.item_list.cuclet);
+item_add(global.item_list.coin);
