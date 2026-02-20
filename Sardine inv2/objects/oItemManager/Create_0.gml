@@ -245,6 +245,8 @@ posSection = 0;
 
 sections = ["Items", "Weapons", "Artifacts"];
 
+section_ext_y = [0, 0, 0];
+
 global.inv = array_create(36, -1);
 
 //global.inv_max = 36;
@@ -252,3 +254,5 @@ global.inv = array_create(36, -1);
 item_add(global.item_list.flower);
 item_add(global.item_list.cuclet);
 item_add(global.item_list.coin);
+
+

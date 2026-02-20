@@ -16,3 +16,18 @@ function create_item(_name, _description, _battle, _abilities, _cost, _sprite, _
 	equip_status = _equip_status;
 	equip_power = _equip_power;
 }
+
+
+function inv_get_using_space()
+{
+	var _count = 0;
+	for (var i = 0; i < array_length(global.inv); i++)
+	{
+		if global.inv[i] != -1
+		{
+			_count++;	
+		}
+	}
+	
+	return _count;
+}
