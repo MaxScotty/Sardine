@@ -1,6 +1,3 @@
-/// @desc		equip status и equip power используется только если это оружие или броня.
-/// @desc		equip status может быть равен EQUIP_STATUS.ARMOR или EQUIP_STATUS.WEAPON.
-/// @desc		equip power это атака или защита в зависимости от предыдущего аргумента.
 function create_item(_name, _description, _battle, _abilities, _cost, _sprite, _sprite_detail, _effect, _equip_status = -1, _equip_power = 0) constructor
 {
 	Name = _name;
@@ -12,10 +9,47 @@ function create_item(_name, _description, _battle, _abilities, _cost, _sprite, _
 	sprite = _sprite;
 	spriteDetail = _sprite_detail;
 	effect = _effect;
-	
-	equip_status = _equip_status;
-	equip_power = _equip_power;
 }
+
+enum EQUIP_STATUS
+{
+	ARMOR = 0,
+	WEAPON = 1,
+}
+
+function create_equip(_name, _desc, _sprite, _equip_status, _power) constructor
+{
+	name = _name;
+	desc = _desc
+	sprite = _sprite;
+	equip_status = _equip_status;
+	equip_power = _power;
+}
+
+function equip_add(_equip)
+{
+	if !array_contains(global.eqiup_inv, _equip)
+	{
+		array_push(global.eqiup_inv, _equip);	
+	}
+}
+
+function create_artifact(_name, _desc, _sprite, _overline_sprite) constructor
+{
+	name = _name;
+	desc = _desc;
+	sprite = _sprite;
+	overline_sprite = _overline_sprite;
+}
+
+function artifact_add(_artifact)
+{
+	if !array_contains(global.artifacts_inv, _artifact)
+	{
+		array_push(global.artifacts_inv, _artifact);	
+	}
+}
+
 
 
 function inv_get_using_space()

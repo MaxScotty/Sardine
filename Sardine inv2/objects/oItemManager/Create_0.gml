@@ -15,40 +15,20 @@ depth = -99999999999999999999999;
 
 
 surface = -1;
+surface2 = -1;
 
 showItemsRoll = 0;
 
 ext_y_items = 0;
 
-/*
 
-для удаления предметов
-	в oItemManager
-		delete_item(item_get_from_pos(posX, posY));
-	в других объектах
-		delete_item(global.item_list.item);
-		
-для добавления предметов
-	item_add(global.item_list.item);
-	
-для использования предметов
-	в oItemManager
-		use_item(item_get_from_pos(posX, posY));
-	в других объектах
-		use_item(global.item_list.item);
-	
-*/
-
-enum EQUIP_STATUS
-{
-	ARMOR = 0,
-	WEAPON = 1,
-}
 
 
 
 global.item_list =
 {
+	
+	
 	coin : new create_item(
 		"Coin",
 		"Pay",
@@ -238,8 +218,49 @@ global.item_list =
 	//}),
 }
 
+global.eqiup_inv = [];
+
+global.equip_list =
+{
+	greatSword : new create_equip( 
+		"Great Sword",
+		"A fat sword.",
+		Greatsword,
+		EQUIP_STATUS.WEAPON,
+		0.000000000000000000000000000000001
+	),
+	spear : new create_equip( 
+		"Spear",
+		"Ya sry",
+		Spear,
+		EQUIP_STATUS.WEAPON,
+		69
+	),
+	draining_blow : new create_equip( 
+		"Draining blow",
+		"Draining_blow",
+		Draining_blow,
+		EQUIP_STATUS.WEAPON,
+		1488
+	),
+}
+
+global.artifacts_inv = [];
+global.artifacts_list =
+{
+	hades : new create_artifact( 
+		"Hades",
+		"Blyadskiy Cherep Koshki",
+		Hades_Artifact,
+		Hades_Artifact_s_overline
+	),
+}
 
 pos = 0;
+
+showArtifact_info = false;
+showArtifact_scale = 1;
+showArtifact_scale_to = 1.5;
 
 posSection = 0;
 
@@ -256,3 +277,11 @@ item_add(global.item_list.cuclet);
 item_add(global.item_list.coin);
 
 
+equip_add(global.equip_list.draining_blow);
+equip_add(global.equip_list.greatSword);
+equip_add(global.equip_list.spear);
+
+artifact_add(global.artifacts_list.hades);
+	
+	
+show_inv = false;

@@ -1,5 +1,7 @@
 if (live_call()) return live_result;
 
+if !show_inv { exit; };
+
 var _cam_x = camera_get_view_x(view_camera[0]);
 var _cam_y = camera_get_view_y(view_camera[0]);
 
@@ -10,6 +12,10 @@ if !surface_exists(surface)
 {
 	surface = surface_create(236, 80);
 }
+
+draw_sprite(LB_inventory, 0, _cam_x+96, _cam_y+48);
+draw_sprite(RB_inventory, 0, _cam_x+_cam_w-128, _cam_y+48);
+
 
 draw_set_font(FONT);
 draw_set_valign(fa_middle);
@@ -33,7 +39,11 @@ draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
 draw_sprite(Inventory_base, 0, _cam_x+_cam_w/2, _cam_y+_cam_h/2);
-draw_sprite(Items_base, 0, _cam_x+_cam_w/2, _cam_y+_cam_h/2);
+
+if posSection == 0
+{
+	draw_sprite(Items_base, 0, _cam_x+_cam_w/2, _cam_y+_cam_h/2);
+}
 
 surface_set_target(surface);
 draw_clear_alpha(c_black, 0);
@@ -92,9 +102,112 @@ if posSection == 0
 	
 		draw_text_ext_transformed(_cam_x+512-104, _cam_y+120+84, global.inv[pos].description, 14, 92*3, 0.5, 0.5, 0);
 	}
-	
-	draw_sprite(Use_inventory, 0, _cam_x+64*6.6, _cam_y+240);
 }
 
-draw_sprite(LB_inventory, 0, _cam_x+96, _cam_y+48);
-draw_sprite(RB_inventory, 0, _cam_x+_cam_w-128, _cam_y+48);
+
+
+if posSection == 1
+{
+	var _www = 384; 
+	var _hhh = 128; 
+	
+	if !surface_exists(surface2)
+	{
+		surface2 = surface_create(_www, _hhh);	
+	}
+	
+	surface_set_target(surface2);
+	draw_clear_alpha(c_black, 0);
+	
+	var _spr;
+	
+	var _posNext = pos+1;
+	if _posNext >= array_length(global.eqiup_inv) { _posNext = 0; };
+	
+	_spr = global.eqiup_inv[_posNext].sprite;
+	
+	draw_sprite_ext(_spr, 0, 0+_www-sprite_get_width(_spr)*0.5, 0+sprite_get_height(_spr)*0.5/2, 0.5, 0.5, 0, c_white, 1);
+	
+	var _posPrev = pos-1;
+	if _posPrev < 0 { _posPrev = array_length(global.eqiup_inv)-1; };
+	
+	_spr = global.eqiup_inv[_posPrev].sprite;
+	
+	draw_sprite_ext(_spr, 0, -_www/6+sprite_get_width(_spr)*0.5, 0+sprite_get_height(_spr)*0.5/2, 0.5, 0.5, 0, c_white, 1);
+	
+	_spr = global.eqiup_inv[pos].sprite;
+	
+	draw_sprite_ext(_spr, 0, 0+_www/2-sprite_get_width(_spr)/2, 0, 1, 1, 0, c_white, 1);
+	
+	
+	
+	surface_reset_target();
+	
+	draw_sprite_ext(Arrow, 0, _cam_x+_www/2 + sin(current_time/500)*8, _cam_y+_hhh, 3, 3, 0, c_white, 1);
+	draw_sprite_ext(Arrow, 0, _cam_x+_www+56 - sin(current_time/500)*8, _cam_y+_hhh, -3, 3, 0, c_white, 1);
+	
+	draw_surface(surface2, _cam_x+124, _cam_y+108)
+
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text(_cam_x+256+64, _cam_y+96, global.eqiup_inv[pos].name);
+	
+	draw_text_ext(_cam_x+256+64, _cam_y+256, global.eqiup_inv[pos].desc, 16, _www-32);
+}
+
+if posSection == 2
+{
+	var _www = 384; 
+	var _hhh = 128; 
+	
+	if !surface_exists(surface2)
+	{
+		surface2 = surface_create(_www, _hhh);	
+	}
+	
+	surface_set_target(surface2);
+	draw_clear_alpha(c_black, 0);
+	
+	var _spr_overline = global.artifacts_inv[pos].overline_sprite
+	draw_sprite(_spr_overline, 0, 0+_www/2-sprite_get_width(_spr_overline)/2, 0)	
+	
+	for (var i = 0; i < array_length(global.artifacts_inv); i++)
+	{
+		var _spr = global.artifacts_inv[i].sprite;
+		
+		draw_sprite(_spr, 0, 0-pos*128+_www/2-sprite_get_width(_spr)/2 + 128*i, 0);
+	}
+	surface_reset_target();
+	
+	draw_surface(surface2, _cam_x+124, _cam_y+108)
+	
+	if showArtifact_info
+	{
+		var _spr = global.artifacts_inv[pos].sprite;
+		
+		showArtifact_scale = lerp(showArtifact_scale, showArtifact_scale_to, 0.1);	
+		
+		draw_set_alpha(showArtifact_scale/showArtifact_scale_to*0.8);
+		
+		draw_rectangle_colour(_cam_x, _cam_y, _cam_x+_cam_w, _cam_y+_cam_h, c_black, c_black, c_black, c_black, false);
+		
+		draw_set_alpha(1);
+		
+		draw_sprite_ext(_spr_overline, 0, 0+256+60-sprite_get_width(_spr_overline)/2*showArtifact_scale, 0 + 128+36 - (sprite_get_height(_spr_overline)*showArtifact_scale/2)*(showArtifact_scale/showArtifact_scale_to), showArtifact_scale, showArtifact_scale, 0, c_white, 1);	
+		draw_sprite_ext(_spr, 0, 0+256+60-sprite_get_width(_spr)/2*showArtifact_scale, 0 + 128+36 - (sprite_get_height(_spr)*showArtifact_scale/2)*(showArtifact_scale/showArtifact_scale_to), showArtifact_scale, showArtifact_scale, 0, c_white, 1);	
+		
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
+		draw_text_color(_cam_x+256+60, _cam_y+48, global.artifacts_inv[pos].name, c_white, c_white, c_white, c_white, showArtifact_scale/showArtifact_scale_to);
+		
+		
+		draw_text_ext_color(_cam_x+256+60, _cam_y+290, global.artifacts_inv[pos].desc, 16, _cam_w-32, c_white, c_white, c_white, c_white, showArtifact_scale/showArtifact_scale_to);
+		
+	} else
+	{
+		showArtifact_scale = 1;	
+	}
+	
+}	
+
+draw_sprite(Use_inventory, 0, _cam_x+64*6.6, _cam_y+240);
