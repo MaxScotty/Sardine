@@ -34,19 +34,22 @@ function equip_add(_equip)
 	}
 }
 
-function create_artifact(_name, _desc, _sprite, _overline_sprite) constructor
+function create_artifact(_name, _desc, _sprite, _overline_sprite, _found = false) constructor
 {
 	name = _name;
 	desc = _desc;
 	sprite = _sprite;
 	overline_sprite = _overline_sprite;
+	found = _found;
 }
 
 function artifact_add(_artifact)
 {
-	if !array_contains(global.artifacts_inv, _artifact)
+	var _ind = array_get_index(global.artifacts_inv, _artifact);
+	
+	if _ind != -1
 	{
-		array_push(global.artifacts_inv, _artifact);	
+		global.artifacts_inv[_ind].found = true;	
 	}
 }
 

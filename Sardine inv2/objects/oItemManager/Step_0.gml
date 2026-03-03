@@ -117,7 +117,10 @@ if input_check_pressed("accept")
 			//equip
 		break;
 		case 2:
-			showArtifact_info = !showArtifact_info;
+			if global.artifacts_inv[pos].found
+			{
+				showArtifact_info = !showArtifact_info;
+			}
 		break;
 	}
 }

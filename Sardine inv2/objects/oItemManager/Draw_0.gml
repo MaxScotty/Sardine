@@ -176,7 +176,13 @@ if posSection == 2
 		var _spr = global.artifacts_inv[i].sprite;
 		
 		draw_sprite(_spr, 0, 0-pos*128+_www/2-sprite_get_width(_spr)/2 + 128*i, 0);
+	
+		if !global.artifacts_inv[i].found
+		{
+			draw_sprite_ext(_spr, 0, 0-pos*128+_www/2-sprite_get_width(_spr)/2 + 128*i, 0, 1, 1, 0, c_black, 0.5);	
+		}
 	}
+	
 	surface_reset_target();
 	
 	draw_surface(surface2, _cam_x+124, _cam_y+108)

@@ -245,15 +245,24 @@ global.equip_list =
 	),
 }
 
-global.artifacts_inv = [];
 global.artifacts_list =
 {
 	hades : new create_artifact( 
 		"Hades",
 		"Blyadskiy Cherep Koshki",
 		Hades_Artifact,
-		Hades_Artifact_s_overline
+		Hades_Artifact_s_overline,
+		false
 	),
+}
+
+global.artifacts_inv = [];
+
+var _s_n = struct_get_names(global.artifacts_list);
+for (var i = 0; i < array_length(_s_n); i++)
+{	
+	var _name = _s_n[i];
+	array_push(global.artifacts_inv, global.artifacts_list[$ _name]);
 }
 
 pos = 0;
