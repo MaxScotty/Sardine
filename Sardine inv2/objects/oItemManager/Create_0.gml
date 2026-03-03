@@ -234,15 +234,7 @@ global.equip_list =
 		"Ya sry",
 		Spear,
 		EQUIP_STATUS.WEAPON,
-		69
-	),
-	draining_blow : new create_equip( 
-		"Draining blow",
-		"Draining_blow",
-		Draining_blow,
-		EQUIP_STATUS.WEAPON,
-		1488
-	),
+		69),
 }
 
 global.artifacts_list =
@@ -253,6 +245,14 @@ global.artifacts_list =
 		Hades_Artifact,
 		Hades_Artifact_s_overline,
 		false
+	),
+	draining_blow : new create_artifact( 
+		"draining blow",
+		"draining_blow",
+		Draining_blow,
+		Draining_blow,
+		false
+		
 	),
 }
 
@@ -286,11 +286,12 @@ item_add(global.item_list.cuclet);
 item_add(global.item_list.coin);
 
 
-equip_add(global.equip_list.draining_blow);
+//equip_add(global.equip_list.draining_blow);
 equip_add(global.equip_list.greatSword);
 equip_add(global.equip_list.spear);
 
 artifact_add(global.artifacts_list.hades);
+artifact_add(global.artifacts_list.draining_blow);
 	
 	
 show_inv = false;
