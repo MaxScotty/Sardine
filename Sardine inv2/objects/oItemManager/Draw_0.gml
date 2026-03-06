@@ -169,17 +169,17 @@ if posSection == 2
 	draw_clear_alpha(c_black, 0);
 	
 	var _spr_overline = global.artifacts_inv[pos].overline_sprite
-	draw_sprite(_spr_overline, 0, 0+_www/2-sprite_get_width(_spr_overline)/2, 0)	
+	draw_sprite_ext(_spr_overline, 0, 0+pos*70+_www/5-sprite_get_width(_spr_overline)/2, 32, 0.5, 0.5, 0, c_white, 1);	
 	
 	for (var i = 0; i < array_length(global.artifacts_inv); i++)
 	{
 		var _spr = global.artifacts_inv[i].sprite;
 		
-		draw_sprite(_spr, 0, 0-pos*128+_www/2-sprite_get_width(_spr)/2 + 128*i, 0);
+		draw_sprite_ext(_spr, 0, 0+_www/5-sprite_get_width(_spr)/2 + 70*i, 32, 0.5, 0.5, 0, c_white, 1);
 	
 		if !global.artifacts_inv[i].found
 		{
-			draw_sprite_ext(_spr, 0, 0-pos*128+_www/2-sprite_get_width(_spr)/2 + 128*i, 0, 1, 1, 0, c_black, 0.5);	
+			draw_sprite_ext(_spr, 0, 0+_www/5-sprite_get_width(_spr)/2 + 70*i, 32, 0.5, 0.5, 0, c_black, 1);	
 		}
 	}
 	
@@ -199,8 +199,8 @@ if posSection == 2
 		
 		draw_set_alpha(1);
 		
-		draw_sprite_ext(_spr_overline, 0, 0+256+60-sprite_get_width(_spr_overline)/2*showArtifact_scale, 0 + 128+36 - (sprite_get_height(_spr_overline)*showArtifact_scale/2)*(showArtifact_scale/showArtifact_scale_to), showArtifact_scale, showArtifact_scale, 0, c_white, 1);	
-		draw_sprite_ext(_spr, 0, 0+256+60-sprite_get_width(_spr)/2*showArtifact_scale, 0 + 128+36 - (sprite_get_height(_spr)*showArtifact_scale/2)*(showArtifact_scale/showArtifact_scale_to), showArtifact_scale, showArtifact_scale, 0, c_white, 1);	
+		draw_sprite_ext(_spr_overline, 0, _cam_x+256+60-sprite_get_width(_spr_overline)/2*showArtifact_scale, _cam_y + 128+36 - (sprite_get_height(_spr_overline)*showArtifact_scale/2)*(showArtifact_scale/showArtifact_scale_to), showArtifact_scale, showArtifact_scale, 0, c_white, 1);	
+		draw_sprite_ext(_spr, 0, _cam_x+256+60-sprite_get_width(_spr)/2*showArtifact_scale, _cam_y + 128+36 - (sprite_get_height(_spr)*showArtifact_scale/2)*(showArtifact_scale/showArtifact_scale_to), showArtifact_scale, showArtifact_scale, 0, c_white, 1);	
 		
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);

@@ -40,7 +40,7 @@ function create_artifact(_name, _desc, _sprite, _overline_sprite, _found = false
 	desc = _desc;
 	sprite = _sprite;
 	overline_sprite = _overline_sprite;
-	found = _found;
+	found = false;
 }
 
 function artifact_add(_artifact)

@@ -243,27 +243,55 @@ global.artifacts_list =
 		"Hades",
 		"Blyadskiy Cherep Koshki",
 		Hades_Artifact,
-		Hades_Artifact_s_overline,
-		false
+		Hades_Artifact_s_overline
 	),
-	draining_blow : new create_artifact( 
-		"draining blow",
-		"draining_blow",
-		Draining_blow,
-		Draining_blow,
-		false
-		
+	
+	test : new create_artifact( 
+		"Hades",
+		"Blyadskiy Cherep Koshki",
+		Hades_Artifact,
+		Hades_Artifact_s_overline
+	),
+	test2 : new create_artifact( 
+		"Hades",
+		"Blyadskiy Cherep Koshki",
+		Hades_Artifact,
+		Hades_Artifact_s_overline
+	),
+	
+	lox_poseidon : new create_artifact(
+		"Poseidon",
+		"lox",
+		Poseidon_s_wrath,
+		Poseidon_s_wrath_s_overline
+	),
+	
+	strela : new create_artifact( 
+		"Strela",
+		"strela. norm strela",
+		Artemis__Favor,
+		Artemis__Favor_overline
 	),
 }
 
 global.artifacts_inv = [];
 
-var _s_n = struct_get_names(global.artifacts_list);
-for (var i = 0; i < array_length(_s_n); i++)
-{	
-	var _name = _s_n[i];
-	array_push(global.artifacts_inv, global.artifacts_list[$ _name]);
-}
+//var _s_n = struct_get_names(global.artifacts_list);
+//for (var i = 0; i < array_length(_s_n); i++)
+//{	
+//	var _name = _s_n[i];
+//	array_push(global.artifacts_inv, global.artifacts_list[$ _name]);
+//}
+
+array_push(global.artifacts_inv, global.artifacts_list.hades);
+array_push(global.artifacts_inv, global.artifacts_list.lox_poseidon);
+array_push(global.artifacts_inv, global.artifacts_list.strela);
+array_push(global.artifacts_inv, global.artifacts_list.test);
+array_push(global.artifacts_inv, global.artifacts_list.test2);
+
+global.artifacts_inv[0].found = true;
+global.artifacts_inv[1].found = true;
+global.artifacts_inv[2].found = true;
 
 pos = 0;
 
@@ -290,8 +318,8 @@ item_add(global.item_list.coin);
 equip_add(global.equip_list.greatSword);
 equip_add(global.equip_list.spear);
 
-artifact_add(global.artifacts_list.hades);
-artifact_add(global.artifacts_list.draining_blow);
+//artifact_add(global.artifacts_list.hades);
+//artifact_add(global.artifacts_list.draining_blow);
 	
 	
 show_inv = false;

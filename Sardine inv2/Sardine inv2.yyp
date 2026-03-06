@@ -717,6 +717,8 @@
     {"id":{"name":"sHPver2","path":"sprites/sHPver2/sHPver2.yy",},},
     {"id":{"name":"sInventory","path":"sprites/sInventory/sInventory.yy",},},
     {"id":{"name":"sJoyEmotion","path":"sprites/sJoyEmotion/sJoyEmotion.yy",},},
+    {"id":{"name":"Slider_base_inv","path":"sprites/Slider_base_inv/Slider_base_inv.yy",},},
+    {"id":{"name":"Slider_inv","path":"sprites/Slider_inv/Slider_inv.yy",},},
     {"id":{"name":"sLight","path":"sprites/sLight/sLight.yy",},},
     {"id":{"name":"sMarker","path":"sprites/sMarker/sMarker.yy",},},
     {"id":{"name":"sMediumCrystal","path":"sprites/sMediumCrystal/sMediumCrystal.yy",},},
