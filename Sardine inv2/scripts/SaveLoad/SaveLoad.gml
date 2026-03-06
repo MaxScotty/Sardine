@@ -17,17 +17,16 @@ function SaveGame()
 	_map[? "XP_required"] = global.xp_required;
 	
 	//inv
-	var _len = array_length(oItemManager.inv);
-	_map[? "InvSize"] = _len;
+	var _len = array_length(global.inv);
 	for (var i = 0; i < _len; i++)
 	{
-		if oItemManager.inv[i] != noone
+		if global.inv[i] != -1
 		{
-			_map[? "Inv"+string(i)] = item_get_list_name(oItemManager.inv[i]);
-			_map[? "InvNumber"+string(i)] = oItemManager.inv[i].number;
+			_map[? "Inv"+string(i)] = item_get_list_name(global.inv[i]);
+			_map[? "InvNumber"+string(i)] = global.inv[i].number;
 		} else
 		{
-			_map[? "Inv"+string(i)] = noone;
+			_map[? "Inv"+string(i)] = -1;
 		}
 	}
 	
@@ -82,14 +81,14 @@ function LoadGame(_slot)
 		var _num = _json[? "InvSize"];
 		for (var i = 0; i < _num; i++)
 		{
-			if _json[? "Inv"+string(i)] != noone
+			if _json[? "Inv"+string(i)] != -1
 			{
-				oItemManager.inv[i] = struct_get(global.item_list, _json[? "Inv"+string(i)] );
-				oItemManager.inv[i].number = _json[? "InvNumber"+string(i)];
+				global.inv[i] = struct_get(global.item_list, _json[? "Inv"+string(i)] );
+				global.inv[i].number = _json[? "InvNumber"+string(i)];
 			} else
 			{
-				if oItemManager.inv[i] != noone { oItemManager.inv[i].number = 0; };
-				oItemManager.inv[i] = noone;
+				if global.inv[i] != -1 { global.inv[i].number = 0; };
+				global.inv[i] = -1;
 			}
 		}
 				
