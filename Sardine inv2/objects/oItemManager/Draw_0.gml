@@ -86,6 +86,11 @@ if posSection == 0
 {
 	draw_surface(surface, _cam_x+148, _cam_y+118);
 	
+	slider_y = lerp(slider_y, ((sprite_get_height(Slider_base_inv)-sprite_get_height(Slider_inv))*(showItemsRoll/2)), 0.1);
+	
+	draw_sprite(Slider_base_inv, 0, _cam_x+164+205, _cam_y+120);
+	draw_sprite(Slider_inv, 0, _cam_x+164+205, _cam_y+120+slider_y);
+	
 	draw_sprite(HP_Inv_empty, 0, _cam_x+164, _cam_y+204);
 	draw_sprite_part(HP_Inv_full, 0, 0, 0, sprite_get_width(HP_Inv_full)*(global.playerHealth/global.playerHealthMax), sprite_get_height(HP_Inv_full), _cam_x+164, _cam_y+204);
 

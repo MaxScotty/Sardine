@@ -21,7 +21,7 @@ showItemsRoll = 0;
 
 ext_y_items = 0;
 
-
+slider_y = 0;
 
 
 
