@@ -2,6 +2,8 @@ if (live_call()) return live_result;
 
 if !show_inv { exit; };
 
+oSardine.move_spd = 0;
+
 var _cam_x = camera_get_view_x(view_camera[0]);
 var _cam_y = camera_get_view_y(view_camera[0]);
 
@@ -13,9 +15,13 @@ if !surface_exists(surface)
 	surface = surface_create(236, 80);
 }
 
-draw_sprite(LB_inventory, 0, _cam_x+96, _cam_y+48);
-draw_sprite(RB_inventory, 0, _cam_x+_cam_w-128, _cam_y+48);
+var _g_c = input_gamepad_is_any_connected();
 
+if _g_c
+{
+	draw_sprite(LB_inventory, 0, _cam_x+96, _cam_y+48);
+	draw_sprite(RB_inventory, 0, _cam_x+_cam_w-128, _cam_y+48);
+}
 
 draw_set_font(FONT);
 draw_set_valign(fa_middle);
@@ -54,6 +60,9 @@ ext_y_items = lerp(ext_y_items, _ext_y, 0.1);
 
 var _count = 0;
 
+draw_set_halign(fa_left);
+draw_set_halign(fa_top);
+
 for (var yy = 0; yy < 6; yy++)
 {
 	for (var xx = 0; xx < 6; xx++)
@@ -71,6 +80,7 @@ for (var yy = 0; yy < 6; yy++)
 		if global.inv[_count] != -1
 		{
 			draw_sprite(global.inv[_count].sprite, 0, 7+37*xx, 12+28*yy-ext_y_items);
+			draw_text_transformed(24+37*xx, 12+28*yy-ext_y_items, global.inv[_count].number, 0.75, 0.75, 0);
 			
 		}
 		
@@ -221,4 +231,8 @@ if posSection == 2
 	
 }	
 
-draw_sprite(Use_inventory, 0, _cam_x+64*6.6, _cam_y+240);
+if _g_c
+{
+	draw_sprite(Use_inventory, 0, _cam_x+64*6.6, _cam_y+240);
+}
+
