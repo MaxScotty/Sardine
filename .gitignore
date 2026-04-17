@@ -1,3 +1,4 @@
 *.zip
 Sardine inv2/Sardine inv2.yyp
 **/GMLive/*
+**/GMLive_fallback/*
