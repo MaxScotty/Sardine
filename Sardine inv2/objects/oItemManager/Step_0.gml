@@ -1,4 +1,4 @@
-if (live_call()) return live_result;
+
 
 if !showArtifact_info && keyboard_check_pressed(ord("I"))
 {

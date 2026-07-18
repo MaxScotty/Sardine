@@ -1,4 +1,4 @@
-//if (live_call()) return live_result;
+//
 
 //рисуем задний фон
 draw_sprite_stretched_ext(sShopBgPh, 0, 0, 0, room_width, room_height, c_white, alphaBg);

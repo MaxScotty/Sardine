@@ -1,4 +1,4 @@
-//if (live_call()) return live_result;
+//
 
 //получаем индекс слота с монетами
 posCoins = item_get_slot_number(global.item_list.coin);
