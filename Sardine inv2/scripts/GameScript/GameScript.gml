@@ -1,6 +1,9 @@
 function GameScript(_text_id){
 
 switch(_text_id) {
+	case "sign_not_exist":
+		TextScript("*It's not exists.");
+	break;
 
 	//--------------TEST--------------\\
 	case "npc 5":

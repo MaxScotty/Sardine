@@ -1,2 +1,2 @@
 
-room_goto(rCave);
+room_goto(rCave_test);

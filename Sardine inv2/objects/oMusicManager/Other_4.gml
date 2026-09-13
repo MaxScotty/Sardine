@@ -7,3 +7,8 @@ if room == rCavePassage
 {
 	set_song_ingame(snd_Broken, 60, 2 * 60);
 }
+
+if room == rCave_test
+{
+	set_song_ingame(not_exist, 56, 11);
+}
