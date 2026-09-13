@@ -1,18 +1,20 @@
 enemies_number = 0;
-myEnemies = [];
+//myEnemies = [];
 
 
-is_anyone_of_my_great_sweet_childs_exists_anymore = function()
-{
-	for (var i = 0; i < array_length(myEnemies); i++)
-	{
-		if instance_exists(myEnemies[i])
-		{
-			return true;	
-		}
-	}
+//is_anyone_of_my_great_sweet_childs_exists_anymore = function()
+//{
+//	for (var i = 0; i < array_length(myEnemies); i++)
+//	{
+//		if instance_exists(myEnemies[i])
+//		{
+//			return true;	
+//		}
+//	}
 	
-	return false;
-}
+//	return false;
+//}
+
+create_enemies = false;
 
 timerNotUse = 2;

@@ -15,15 +15,21 @@ var _in_cam = (x >= _cam_x && x <= _cam_x+_cam_w && y >= _cam_y && y <= _cam_y+_
 
 if !_in_cam
 {
-	if !is_anyone_of_my_great_sweet_childs_exists_anymore()
+	if create_enemies
 	{
 		enemies_number = irandom_range(create_range_from, create_range_to);
-		myEnemies = [];
-		
+		//myEnemies = [];
+	
 		for (var i = 0; i < enemies_number; i++)
 		{
-			var _inst = instance_create_depth(irandom_range(bbox_left, bbox_right), irandom_range(bbox_top, bbox_bottom), 0, enemie);	
-			array_push(myEnemies, _inst);
+			//var _inst = 
+			instance_create_depth(irandom_range(bbox_left, bbox_right), irandom_range(bbox_top, bbox_bottom), 0, enemie);	
+			//array_push(myEnemies, _inst);
 		}	
+		
+		create_enemies = false;
 	}
+} else
+{
+	create_enemies = true;	
 }
