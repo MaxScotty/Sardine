@@ -1,5 +1,5 @@
 enemies_number = 0;
-//myEnemies = [];
+myEnemies = [];
 
 
 //is_anyone_of_my_great_sweet_childs_exists_anymore = function()
