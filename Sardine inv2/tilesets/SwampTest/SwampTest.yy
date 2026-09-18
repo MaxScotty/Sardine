@@ -1,7 +1,9 @@
 {
   "$GMTileSet":"v1",
   "%Name":"SwampTest",
-  "autoTileSets":[],
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[24,42,40,41,2,22,0,3,19,0,20,5,1,43,45,21,],},
+  ],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,
